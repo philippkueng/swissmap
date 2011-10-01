@@ -13,7 +13,29 @@ $(document).ready(() ->
   
   window.target1_dataset = ""
   window.target2_dataset = ""
+  window.interpolate_values = false
+  window.highest_interpolated_value = 0
   
+  apply_color_to_canton = (canton, percentage) ->
+    console.log("canton of #{canton.canton} with #{percentage}%")
+  
+    if percentage?
+      if window.interpolate_values
+        percentage = ((100 * percentage) / window.highest_interpolated_value)
+      
+      # assumption that the data format for the percentage value was like 94.4123% and not 0.944123
+      if percentage >= 0
+        $("#container svg g#cantons path[id='#{canton.canton}']}").attr('fill', "rgba(166,3,17,#{(percentage / 100)})")
+      else
+        $("#container svg g#cantons path[id='#{canton.canton}']}").attr('fill', "rgba(49,0,98,#{(percentage / 100)})")  
+    else
+      $("#container svg g#cantons path[id='#{canton.canton}']}").attr('fill', 'url(#gridPattern)')
+      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('stroke','green')
+      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('stroke-width', '4')
+      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('stroke-dasharray','2 2 2 2')
+      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('style','stroke:white;stroke-width:3;')
+      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('fill','green')
+       
   # make the target dropable
   $("#target1").droppable(
     drop: (event, ui) ->
@@ -23,10 +45,19 @@ $(document).ready(() ->
       
       $('#target1').html("<span>#{$(ui.draggable).html()}</span>")
       
-      apply_color_to_canton = (canton) ->
-        $("#container svg g#cantons path[id='#{canton.canton}']").attr('fill', "rgba(166,3,17,0.#{canton[name].replace('.','')})")
-        
-      (apply_color_to_canton canton for canton in window.swissmapdata.data)  
+      # Interpolate the color range, because it's difficult to see differences for low percent values
+      if window.interpolate_values
+        window.highest_interpolated_value = 0
+        get_highest_value = (canton) ->
+          if canton[name] != "" and parseFloat(canton[name]) >= window.highest_interpolated_value
+            window.highest_interpolated_value = parseFloat(canton[name])
+          else
+            if canton[name] != "" and (parseFloat(canton[name]) * -1) >= window.highest_interpolated_value
+              window.highest_interpolated_value = parseFloat(canton[name] * -1)
+              
+        (get_highest_value canton for canton in window.swissmapdata.data)
+      
+      (apply_color_to_canton canton, (if canton[name] is "" then null else parseFloat(canton[name])) for canton in window.swissmapdata.data)  
   )
   
   $("#target2").droppable(
@@ -58,8 +89,6 @@ $(document).ready(() ->
           second_dataset = parseFloat(canton[window.target2_dataset])
       
           result = first_dataset / second_dataset
-          
-          console.log(result)
           
           if result >= 0
             result_percentage = (result / window.highest_value)
