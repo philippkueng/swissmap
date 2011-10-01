@@ -26,10 +26,38 @@
     width: 36%;
     float: right;
   }
+  #sidebar p{
+    font-size: 1.3498em;
+  }
   #droptargets{
     background: rgba(166,3,17,.2);
     width: 100%;
-    height: 50px;
+    height: 70px;
+    padding: 10px;
+  }
+  #droptargets span{
+    display: block;
+    width: 20%;
+    text-align: center;
+    margin: 0;
+    float: left;
+    font-size: 2em;
+    line-height: 2em;
+  }
+  #target1, #target2{
+    width: 40%;
+    float: left;
+    height: 70px;
+    background: rgba(166,3,17,.4);
+    font-size: 6px;
+    line-height: 6px;
+  }
+  #target1 span, #target2 span{
+    width: 100%;
+    display: block;
+  }
+  #target2{
+    float: right;
   }
   #datasets ul{
     list-style: none;
@@ -37,7 +65,7 @@
   }
   #datasets li{
     display: block;
-    padding: 6px 0px 12px 12px;
+    padding: 6px 12px 12px 12px;
     margin-bottom: 1px;
   }
   #datasets .categories>li{
@@ -57,6 +85,7 @@
 </style>
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+<script type="text/javascript" src="data/new_data.js"></script>
 <script type="text/javascript" src="js/swissmap.js"></script>
 
 </head>
@@ -1543,15 +1572,21 @@
     </g>
     </svg>
     <div id="sidebar">
-      <p>dropbox for the comparison</p>
+      <p>Drag a Dataset here...</p>
       <div id="droptargets">
-        
+        <div id="target1">
+          
+        </div>
+        <span>/</span>
+        <div id="target2">
+          
+        </div>
       </div>
-      <p>list of datasets</p>
+      <p>List of Datasets available</p>
       <div id="datasets">
         <ul class="categories">
           <li>
-            <span>Category 1</span>
+            <span>All Data</span>
             <ul class="datatypes">
               <li>
                 Cheese Sales
@@ -1561,7 +1596,7 @@
               </li>
             </ul>
           </li>
-          <li>
+          <!-- <li>
             <span>Category 1</span>
             <ul class="datatypes">
               <li>
@@ -1571,7 +1606,7 @@
                 Bread Production
               </li>
             </ul>
-          </li>
+          </li> -->
         </ul>
         
       </div>
