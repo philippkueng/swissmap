@@ -10,48 +10,66 @@
     padding: 0;
     height: 100%;
     font-family: Helvetica, Sans-Serif;
+    font-size: 14px;
   }
   #container{
     padding: 40px;
+    max-width: 900px;
+    margin: 0 auto;
   }
   #container h1{
+    padding: 8px 30px 10px 70px;
+    background: transparent url(swissmap_logo.png) top left no-repeat;
+    margin: 0;
+    font-size: 2.4592em;
+    display: block;
+  }
+  #container #map{
+    width: 60%;
+    float: left;
+  }
+  #container #map svg{
     padding: 0;
     margin: 0;
   }
-  #container svg{
-    width: 60%;
-    float: left;
-    background: white;
-  }
   #sidebar{
-    width: 36%;
+    width: 30%;
     float: right;
   }
   #sidebar p{
     font-size: 1.3498em;
   }
   #droptargets{
-    background: rgba(166,3,17,.2);
+    display: block;
     width: 100%;
-    height: 70px;
-    padding: 10px;
+    padding: 20px 0px 50px 0px;
+    overflow: auto;
+  }
+  #droptargets label{
+    display: block;
+    width: 100%;
+    float: left;
+    padding: 0px 0px 10px 0px;
+    font-weight: bold;
   }
   #droptargets span{
     display: block;
-    width: 20%;
+    width: 30%;
     text-align: center;
     margin: 0;
     float: left;
-    font-size: 2em;
+    font-size: 1em;
     line-height: 2em;
   }
   #target1, #target2{
-    width: 40%;
+    width: 34%;
     float: left;
-    height: 70px;
-    background: rgba(166,3,17,.4);
-    font-size: 6px;
-    line-height: 6px;
+    height: 30px;
+    background: #DCDDDE;
+    font-size: 1em;
+  }
+  #target1 .empty, #target2 .empty{
+    background: #DCDDDE;
   }
   #target1 span, #target2 span{
     width: 100%;
@@ -93,11 +111,21 @@
 <body>
   <div id="container">
     <h1>SwissMap</h1>
+    
+    <div id="droptargets">
+      <label for="droptargets">Drag Datasets on the fields below to visualize the comparison.</label>
+      <div id="target1">
+        
+      </div>
+      <span>compare with / divide by</span>
+      <div id="target2">
+        
+      </div>
+    </div>
+    <div id="map">
     <svg version="1.2" baseProfile="tiny"
     	 id="svg2" sodipodi:version="0.32" sodipodi:docname="Suisse cantons.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
-    	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="100%" viewBox="0 0 1052.363 744.094" overflow="inherit" xml:space="preserve">
-    <sodipodi:namedview  pagecolor="#ffffff" inkscape:zoom="0.80231747" bordercolor="#666666" id="base" borderopacity="1.0" inkscape:cy="372.04724" inkscape:pageopacity="0.0" inkscape:pageshadow="2" inkscape:cx="526.18109" inkscape:document-units="px" inkscape:current-layer="layer2" showgrid="false" inkscape:window-width="1439" inkscape:window-height="825" inkscape:window-x="1" inkscape:window-y="49" showguides="true" inkscape:guide-bbox="true">
-    	</sodipodi:namedview>
+    	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1052.363 744.094" overflow="inherit" xml:space="preserve">
     	<defs>
           <pattern id="gridPattern" width="9" height="9"
             patternUnits="userSpaceOnUse">
@@ -1580,17 +1608,8 @@
     		c0.561,0.252,1.356,0.508,1.969,0.563c0.846,0.076,1.992-0.08,2.816-0.282c0.883-0.216,2.364-1.014,2.331-0.984"/>
     </g>
     </svg>
+    </div>
     <div id="sidebar">
-      <p>Drag a Dataset here...</p>
-      <div id="droptargets">
-        <div id="target1">
-          
-        </div>
-        <span>/</span>
-        <div id="target2">
-          
-        </div>
-      </div>
       <p>List of Datasets available</p>
       <div id="datasets">
         <ul class="categories">
