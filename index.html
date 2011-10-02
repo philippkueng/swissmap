@@ -105,6 +105,42 @@
     margin-bottom: 1px;
     cursor: move;
   }
+  #footer{
+    clear: both;
+    padding: 20px 0px 0px 0px;
+    width: 100%;
+    overflow: auto;
+  }
+  #footer p{
+    width: 30%;
+    float: left;
+    padding: 8px 20px 8px 0px;
+    margin: 0px;
+    line-height: 150%;
+  }
+  #share{
+    width: 30%;
+    float: left;
+    padding: 8px 0px 8px 0px;
+  }
+  #share p{
+    display: block;
+    width: 100%;
+    margin: 0px;
+    padding: 0px 0px 8px 0px;
+  }
+  #share iframe{
+    padding: 0px 0px 4px 0px;
+  }
+  #share div{
+    padding: 0px 0px 3px 0px;
+  }
+  #share #fb-root{
+    padding: 0;
+  }
+  hr{
+    border: 2px solid #DCDDDE;
+  }
 </style>
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
@@ -1628,19 +1664,38 @@
               </li>
             </ul>
           </li>
-          <!-- <li>
-            <span>Category 1</span>
-            <ul class="datatypes">
-              <li>
-                Cheese Sales
-              </li>
-              <li>
-                Bread Production
-              </li>
-            </ul>
-          </li> -->
-        </ul>
+        </ul>  
+      </div>
+    </div>
+    <div id="footer">
+      <hr/>
+      <p><strong>SwissMap</strong> was initiated at <a href="http://makeopendata.ch/">Make.OpenData.ch @ EPFL</a> by <a href="http://twitter.com/#!/florin_iorganda">@florin_iorganda</a>, <a href="http://twitter.com/#!/FredericJacobs">@fredericjacobs</a> and <a href="http://twitter.com/#!/philippkueng">@philippkueng</a> with the goal to enable people make sense out of public data by comparing it against each other and making it visible on a swiss map.</p><p>In order to be trusted and extensible the <a href="https://github.com/philippkueng/swissmap">source code</a>, the thing which makes the website running, is also public and is licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0 - CreativeCommons Attribution-ShareAlike 3.0 License</a>.</p>
+      <div id="share">
+        <p><strong>Spread the word</strong></p>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
         
+        <div id="fb-root"></div>
+        <script>(function(d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+          fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+        <div class="fb-like" data-href="http://swissmap.bitfondue.com" data-send="false" data-layout="button_count" data-width="300" data-show-faces="false"></div>
+        
+        <!-- Place this tag where you want the +1 button to render -->
+        <div class="g-plusone" data-size="medium" data-href="http://swissmap.bitfondue.com"></div>
+
+        <!-- Place this render call where appropriate -->
+        <script type="text/javascript">
+          (function() {
+            var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+            po.src = 'https://apis.google.com/js/plusone.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+          })();
+        </script>
       </div>
     </div>
   </div>
