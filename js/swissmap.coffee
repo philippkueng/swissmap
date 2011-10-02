@@ -116,6 +116,6 @@ $(document).ready(() ->
 
   # Hook up the click events to the cantons to show additional information on click.
   $("#container svg g#cantons path").click(() ->
-    alert("you've just selected #{$(this).attr('id')} and the percentage value is: #{(parseFloat($(this).attr('fill').replace('rgba(166,3,17,','').replace(')','')) * 100)}%")
+    $("<div><strong>Canton:</strong> #{$(this).attr('id')}<br/><strong>Percentage:</strong> #{(parseFloat($(this).attr('fill').replace('rgba(166,3,17,','').replace(')','')) * 100)}%</div>").dialog()
   )
 )
