@@ -118,4 +118,17 @@ $(document).ready(() ->
   $("#container svg g#cantons path").click(() ->
     $("<div><strong>Canton:</strong> #{$(this).attr('id')}<br/><strong>Percentage:</strong> #{(parseFloat($(this).attr('fill').replace('rgba(166,3,17,','').replace(')','')) * 100)}%</div>").dialog()
   )
+  
+  # correc webkit-svg bug as reported here: http://stackoverflow.com/questions/7570917/svg-height-incorrectly-calculated-in-webkit-browsers
+  fix_webkit_height_bug = () ->
+    svgW = 1052.363
+    svgH = 744.094
+    cur_svgW = $("#map svg").width()
+    new_svgH = (svgH / svgW) * cur_svgW
+    $("#map svg").height(new_svgH)
+  if $.browser.webkit
+    $(window).resize(() ->
+      fix_webkit_height_bug()
+    )
+    fix_webkit_height_bug()
 )
