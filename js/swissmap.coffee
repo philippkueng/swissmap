@@ -4,7 +4,7 @@ $(document).ready(() ->
   $("#container svg #cantons path").attr('fill', 'rgba(166,3,17,0)')
   
   # hide all the datasets on load
-  $("#datasets .categories .datatypes").hide()
+  # $("#datasets .categories .datatypes").hide()
   
   # show the datasets on click on the category title
   $("#datasets .categories li span").click(() ->

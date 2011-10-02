@@ -36,11 +36,12 @@
     overflow: auto;
   }
   #sidebar{
-    width: 30%;
+    width: 34%;
     float: right;
   }
-  #sidebar p{
-    font-size: 1.3498em;
+  #sidebar label{
+    font-size: 1em;
+    font-weight: bold;
   }
   #droptargets{
     display: block;
@@ -118,11 +119,11 @@
     <div id="droptargets">
       <label for="droptargets">Drag Datasets on the fields below to visualize the comparison.</label>
       <div id="target1">
-        
+        <span>Drag Dataset 1 here...</span>
       </div>
       <span>compare with / divide by</span>
       <div id="target2">
-        
+        <span>Drag Dataset 2 here...</span>
       </div>
     </div>
     <div id="map">
@@ -1613,7 +1614,7 @@
     </svg>
     </div>
     <div id="sidebar">
-      <p>List of Datasets available</p>
+      <label for="datasets">List of Categories &amp; Datasets</label>
       <div id="datasets">
         <ul class="categories">
           <li>
