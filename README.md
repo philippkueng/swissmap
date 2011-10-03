@@ -6,34 +6,34 @@ Until now SwissMap only consists of a static html page, however since parts of t
 
 **Install Node.js**
 
-  $ sudo apt-get install g++ gcc openssl libssl-dev git-core -y
-  $ cd /your/home/directory
-  $ git clone git://github.com/joyent/node.git
-  $ cd node/
-  $ ./configure
-  $ sudo make
-  $ sudo make install
+    $ sudo apt-get install g++ gcc openssl libssl-dev git-core -y
+    $ cd /your/home/directory
+    $ git clone git://github.com/joyent/node.git
+    $ cd node/
+    $ ./configure
+    $ sudo make
+    $ sudo make install
   
 **Install Node Packet Manager (NPM)**
  
- $ cd /your/home/directory
- $ git clone git://github.com/isaacs/npm.git
- $ cd npm/
- $ sudo make install
+    $ cd /your/home/directory
+    $ git clone git://github.com/isaacs/npm.git
+    $ cd npm/
+    $ sudo make install
  
 **Install CoffeeScript**
 
-  $ sudo npm install coffee-script -g
+    $ sudo npm install coffee-script -g
   
 **Cloning SwissMap**
 
-  $ cd /your/home/directory
-  $ git clone git://github.com/philippkueng/swissmap.git
+    $ cd /your/home/directory
+    $ git clone git://github.com/philippkueng/swissmap.git
   
 **Compiling CoffeeScript files**
 
-  $ cd swissmap/js
-  $ coffee --compile *.coffee
+    $ cd swissmap/js
+    $ coffee --compile *.coffee
   
 **Done**
 
