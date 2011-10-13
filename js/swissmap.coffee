@@ -30,11 +30,29 @@ $(document).ready(() ->
         $("#container svg g#cantons path[id='#{canton.canton}']}").attr('fill', "rgba(49,0,98,#{(percentage / 100)})")  
     else
       $("#container svg g#cantons path[id='#{canton.canton}']}").attr('fill', 'url(#gridPattern)')
-      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('stroke','green')
-      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('stroke-width', '4')
-      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('stroke-dasharray','2 2 2 2')
-      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('style','stroke:white;stroke-width:3;')
-      # $("#container svg g#cantons path[id='#{canton.canton}']}").attr('fill','green')
+  
+  get_highest_value = (key) ->
+    highest_stretched_value = 0
+    
+    is_higher = (canton) ->
+      parsed_number = parseFloat(canton[key])
+      if !isNaN(parsed_number) # check if it's a number
+        if parsed_number >= 0 and parsed_number > highest_stretched_value
+          highest_stretched_value = parsed_number
+        else
+          if parsed_number < 0 and (parsed_number * -1) > highest_stretched_value
+            highest_stretched_value = (parsed_number * -1)
+      else
+        console.log("canton #{canton.canton} has no parseable value for the key: #{key}")
+        
+    (is_higher canton for canton in window.swissmapdata.data)
+    return highest_stretched_value
+    
+  set_first_dataset = () ->
+    # Stretch the values for the color range.
+    if window.target1_dataset?   
+        highest_value = get_highest_value(window.target1_dataset)
+        console.log("the highest_value is: #{highest_value}")
        
   # make the target dropable
   $("#target1").droppable(
@@ -56,8 +74,10 @@ $(document).ready(() ->
               window.highest_interpolated_value = parseFloat(canton[name] * -1)
               
         (get_highest_value canton for canton in window.swissmapdata.data)
-      
       (apply_color_to_canton canton, (if canton[name] is "" then null else parseFloat(canton[name])) for canton in window.swissmapdata.data)  
+  
+      set_first_dataset()
+  
   )
   
   $("#target2").droppable(
