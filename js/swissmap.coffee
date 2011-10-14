@@ -170,7 +170,8 @@ $(document).ready(() ->
   # Add the available datasets to the menu.
   add_new_dataset = (definition) ->
     get_key_and_value = (key,value) ->
-      if key.match(/percentage/)
+      # if key.match(/percentage/)
+      if key != "canton"
         $('#datasets ul.datatypes').append("<li id='#{key}'>#{value}</li>")
   
     (get_key_and_value key,value for own key,value of definition)  
