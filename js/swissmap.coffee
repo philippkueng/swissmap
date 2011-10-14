@@ -26,6 +26,28 @@ $(document).ready(() ->
     $(this).next().toggle()
   )
   
+  # **get\_original\_canton\_dataset**
+  #
+  # Iterates over the swissmapdata.data array and returns the object with the appropriate canton property
+  get_original_canton_dataset = (canton_id) ->
+    canton_object = null
+    is_correct_canton = (canton) ->
+      if canton.canton == canton_id
+        canton_object = canton
+    (is_correct_canton canton for canton in window.swissmapdata.data)
+    return canton_object
+    
+  # **get\_canton\_from\_current\_map\_cantons**
+  #
+  # Iterates over the current_map.cantons array and returns the object with the appropriate canton.name property
+  get_canton_from_current_map_cantons = (canton_id) ->
+    canton_object = null
+    is_correct_canton = (canton) ->
+      if canton.name == canton_id
+        canton_object = canton
+    (is_correct_canton canton for canton in window.current_map.cantons)
+    return canton_object
+    
   # **apply\_calculations\_to\_map**
   #
   # Iterates through the current_map.cantons array and applies every canton the given transparency. Makes it red if value is positive and blue if negative.
@@ -182,7 +204,32 @@ $(document).ready(() ->
 
   # Hook up the click events to the cantons to show additional information on click.
   $("#container svg g#cantons path").click(() ->
-    $("<div><strong>Canton:</strong> #{$(this).attr('id')}<br/><strong>Percentage:</strong> #{(parseFloat($(this).attr('fill').replace('rgba(166,3,17,','').replace(')','')) * 100)}%</div>").dialog()
+    # get the canton_id
+    canton_id = $(this).attr('id')
+    
+    # get the full original canton object from window.swissmapdata.data
+    canton = get_original_canton_dataset(canton_id)
+
+    message = ""
+    if window.current_map.type == "single"
+      canton_map = get_canton_from_current_map_cantons(canton_id)
+      message = "Original Value: #{canton[window.current_map.key1]}<br/>Relative Value: #{canton_map.value}%"
+    else
+      if window.current_map.type == "double"
+        message = "Original Value Dataset 1: #{canton[window.current_map.key1]}<br/>"
+        message += "Original Value Dataset 2: #{canton[window.current_map.key2]}<br/>"
+        
+        # make divison of original values
+        mashup_value = parseFloat(canton[window.current_map.key1]) / parseFloat(canton[window.current_map.key2])
+        if !isNaN(mashup_value)
+          message += "Mashed up value: #{canton[window.current_map.key1] / canton[window.current_map.key2]}<br/>"
+          canton_map = get_canton_from_current_map_cantons(canton_id)
+          message += "Relative mashed up value: #{canton_map.value}"
+        else
+          message += "Because of incomplete data we couldn't come up with a mashup value for #{canton_id}."
+        
+    $("<div><strong>Canton: #{canton_id}</strong><br/>#{message}</div>").dialog()
+    # $("<div><strong>Canton:</strong> #{$(this).attr('id')}<br/><strong>Percentage:</strong> #{(parseFloat($(this).attr('fill').replace('rgba(166,3,17,','').replace(')','')) * 100)}%</div>").dialog()
   )
   
   # **fix\_webkit\_height\_bug**
