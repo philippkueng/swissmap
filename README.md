@@ -20,10 +20,6 @@ Until now SwissMap only consists of a static html page, however since parts of t
     $ git clone git://github.com/isaacs/npm.git
     $ cd npm/
     $ sudo make install
- 
-**Install CoffeeScript**
-
-    $ sudo npm install coffee-script -g
   
 **Cloning SwissMap**
 
@@ -32,8 +28,7 @@ Until now SwissMap only consists of a static html page, however since parts of t
   
 **Compiling CoffeeScript files**
 
-    $ cd swissmap/js
-    $ coffee --compile *.coffee
+    $ bash compile.sh
   
 **Done**
 
