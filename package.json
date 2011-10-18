@@ -1,0 +1,8 @@
+{
+    "name": "swissmap",
+    "version": "0.0.1",
+    "dependencies": {
+      "csv": ">= 0.0.10",
+      "coffee-script": ">= 1.1.2"
+  }
+}
