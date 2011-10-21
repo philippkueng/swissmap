@@ -10,6 +10,7 @@ Until now SwissMap only consists of a static html page, however since parts of t
     $ cd /your/home/directory
     $ git clone git://github.com/joyent/node.git
     $ cd node/
+    $ git checkout v0.4.12
     $ ./configure
     $ sudo make
     $ sudo make install
@@ -25,8 +26,13 @@ Until now SwissMap only consists of a static html page, however since parts of t
 
     $ cd /your/home/directory
     $ git clone git://github.com/philippkueng/swissmap.git
+    
+**Installing NPM packages**
+
+    $ cd swissmap/
+    $ npm install
   
-**Compiling CoffeeScript files**
+**Compiling CoffeeScript files and merging CSV files**
 
     $ bash compile.sh
   
