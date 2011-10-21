@@ -51,20 +51,6 @@ window.swissmapdata = {
             "dataset_age": "2010",
             "scraped_at": "October 20th 2011",
             "type": "percentage"
-        },
-        "dataset_name_in_human_format": {
-            "category_human": "Category Name in Human Format",
-            "category_computer": "category_name_in_human_format",
-            "dataset_human": "Dataset Name in Human Format",
-            "dataset_computer": "dataset_name_in_human_format",
-            "dataset_unit": "value unit eg. People per Canton",
-            "dataset_origin": "datasource eg. http://...",
-            "dataset_license": "data license",
-            "dataset_license_source": "data license source",
-            "dataset_age": "age of dataset",
-            "scraped_at": "date of scraping",
-            "more_information": "more information about datasource",
-            "type": "absolute"
         }
     },
     "data": {
@@ -83,10 +69,6 @@ window.swissmapdata = {
             },
             "net_bed_occupancy": {
                 "value": "0.367",
-                "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "12",
                 "metadata": null
             }
         },
@@ -142,10 +124,6 @@ window.swissmapdata = {
             "net_bed_occupancy": {
                 "value": "0.471",
                 "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "23451",
-                "metadata": null
             }
         },
         "BL": {
@@ -163,10 +141,6 @@ window.swissmapdata = {
             },
             "net_bed_occupancy": {
                 "value": "0.291",
-                "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "35",
                 "metadata": null
             }
         },
@@ -186,10 +160,6 @@ window.swissmapdata = {
             "net_bed_occupancy": {
                 "value": "0.426",
                 "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "234.2",
-                "metadata": "foobar"
             }
         },
         "FR": {
@@ -244,10 +214,6 @@ window.swissmapdata = {
             "net_bed_occupancy": {
                 "value": "0.267",
                 "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "1235",
-                "metadata": null
             }
         },
         "GR": {
@@ -265,10 +231,6 @@ window.swissmapdata = {
             },
             "net_bed_occupancy": {
                 "value": "0.463",
-                "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "123",
                 "metadata": null
             }
         },
@@ -396,10 +358,6 @@ window.swissmapdata = {
             "net_bed_occupancy": {
                 "value": "0.395",
                 "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "135.21",
-                "metadata": null
             }
         },
         "SO": {
@@ -418,10 +376,6 @@ window.swissmapdata = {
             "net_bed_occupancy": {
                 "value": "0.348",
                 "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "35",
-                "metadata": null
             }
         },
         "SG": {
@@ -439,10 +393,6 @@ window.swissmapdata = {
             },
             "net_bed_occupancy": {
                 "value": "0.315",
-                "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "1236623",
                 "metadata": null
             }
         },
@@ -570,10 +520,6 @@ window.swissmapdata = {
             "net_bed_occupancy": {
                 "value": "0.544",
                 "metadata": null
-            },
-            "dataset_name_in_human_format": {
-                "value": "12.24",
-                "metadata": "only people over 50 were allowed"
             }
         }
     }
