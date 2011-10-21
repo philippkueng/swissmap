@@ -1,757 +1,580 @@
 window.swissmapdata = {
-definitions:[{"canton":"Canton"},{"population":"Population"},{"density":"Density"},{"population_groth_migration":"Population growth due to migration"},{"population_groth_migration_percentage":"% population growth due to migration"},{"foreigners":"Number of foreigners"},{"foreigners_percentage":"% foreigners in total population"},{"unemployment":"Unemployed"},{"unemployment_percentage":"% of unemployment"},{"fdp/plr_voters":"FDP/PLR total votes"},{"fdp/plr_percentage":"% FDP/PLR votes in total votes"},{"cvp/pdc_voters":"CVP/PDC total votes"},{"cvp/pdc_percentage":"% CVP/PDC votes in total votes"},{"sps/pss_voters":"SPS/PSS total votes"},{"sps/pss_percentage":"% SPS/PSS votes in total votes"},{"svp/udc_voters":"SVP/UDC votes"},{"svp/udc_percentage":"% SVP/UDC votes in total votes"},{"yearly_income_per_capita":"Yearly income per capita"},{"index_income_per_capita":"Index income per capita (CH=100)"},{"national_income":"National Income"},{"national_income_percentage":"% national income"},{"services_companies_number":"# of companies in Services sector"},{"services_jobs_ft":"Full time jobs in Services sector"},{"tourism_companies_number":"# companies of in Tourism sector"},{"tourism_jobs_ft":"Full time jobs in Tourism"},{"tourism_companies_percentage":"% of tourism companies in Services sector"},{"tourism_job_percentage":"% of Tourism jobs in total Services jobs"}],
-data:[{
-"canton":"AG",
-"population":"611466",
-"density":"430",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"8.7",
-"foreigners":"0",
-"foreigners_percentage":"21.5",
-"unemployment":"0",
-"unemployment_percentage":"3.6",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"13.6",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"13.5",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"17.9",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"36.2",
-"yearly_income_per_capita":"49209",
-"index_income_per_capita":"91",
-"national_income":"27913",
-"national_income_percentage":"6.89",
-"services_companies_number":"17279",
-"services_jobs_ft":"130351",
-"tourism_companies_number":"1352",
-"tourism_jobs_ft":"7561",
-"tourism_companies_percentage":"7.82",
-"tourism_job_percentage":"5.80"
-},
-{
-"canton":"AR",
-"population":"53017",
-"density":"218",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"-0.3",
-"foreigners":"0",
-"foreigners_percentage":"13.9",
-"unemployment":"0",
-"unemployment_percentage":"2",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"72",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"",
-"yearly_income_per_capita":"44215",
-"index_income_per_capita":"82",
-"national_income":"2317",
-"national_income_percentage":"0.57",
-"services_companies_number":"1806",
-"services_jobs_ft":"10140",
-"tourism_companies_number":"250",
-"tourism_jobs_ft":"1071",
-"tourism_companies_percentage":"13.84",
-"tourism_job_percentage":"10.56"
-},
-{
-"canton":"AI",
-"population":"15688",
-"density":"91",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"5.1",
-"foreigners":"0",
-"foreigners_percentage":"10",
-"unemployment":"0",
-"unemployment_percentage":"1.2",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"84.6",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"",
-"yearly_income_per_capita":"45936",
-"index_income_per_capita":"85",
-"national_income":"688",
-"national_income_percentage":"0.17",
-"services_companies_number":"532",
-"services_jobs_ft":"3033",
-"tourism_companies_number":"95",
-"tourism_jobs_ft":"610",
-"tourism_companies_percentage":"17.86",
-"tourism_job_percentage":"20.11"
-},
-{
-"canton":"BS",
-"population":"184950",
-"density":"5078",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"3.4",
-"foreigners":"0",
-"foreigners_percentage":"31.5",
-"unemployment":"0",
-"unemployment_percentage":"4",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"11.3",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"7.4",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"35.2",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"18.5",
-"yearly_income_per_capita":"53502",
-"index_income_per_capita":"99",
-"national_income":"14160",
-"national_income_percentage":"3.49",
-"services_companies_number":"7522",
-"services_jobs_ft":"65898",
-"tourism_companies_number":"541",
-"tourism_jobs_ft":"2706",
-"tourism_companies_percentage":"7.19",
-"tourism_job_percentage":"4.11"
-},
-{
-"canton":"BL",
-"population":"274404",
-"density":"527",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"4.6",
-"foreigners":"0",
-"foreigners_percentage":"18.9",
-"unemployment":"0",
-"unemployment_percentage":"3.5",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"17",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"11.4",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"25.2",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"28.5",
-"yearly_income_per_capita":"115178",
-"index_income_per_capita":"213",
-"national_income":"21946",
-"national_income_percentage":"5.41",
-"services_companies_number":"7413",
-"services_jobs_ft":"137988",
-"tourism_companies_number":"549",
-"tourism_jobs_ft":"5391",
-"tourism_companies_percentage":"7.41",
-"tourism_job_percentage":"3.91"
-},
-{
-"canton":"BE",
-"population":"979802",
-"density":"167",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"3.8",
-"foreigners":"0",
-"foreigners_percentage":"13",
-"unemployment":"0",
-"unemployment_percentage":"2.8",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"15.1",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"4.7",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"21.2",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"33.6",
-"yearly_income_per_capita":"45644",
-"index_income_per_capita":"84",
-"national_income":"43985",
-"national_income_percentage":"10.85",
-"services_companies_number":"26775",
-"services_jobs_ft":"360062",
-"tourism_companies_number":"2929",
-"tourism_jobs_ft":"21096",
-"tourism_companies_percentage":"10.94",
-"tourism_job_percentage":"5.86"
-},
-{
-"canton":"FR",
-"population":"278493",
-"density":"171",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"12.8",
-"foreigners":"0",
-"foreigners_percentage":"17.7",
-"unemployment":"0",
-"unemployment_percentage":"3.2",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"13.8",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"24.8",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"22.7",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"22",
-"yearly_income_per_capita":"39559",
-"index_income_per_capita":"73",
-"national_income":"10106",
-"national_income_percentage":"2.49",
-"services_companies_number":"6600",
-"services_jobs_ft":"51593",
-"tourism_companies_number":"759",
-"tourism_jobs_ft":"4308",
-"tourism_companies_percentage":"11.50",
-"tourism_job_percentage":"8.35"
-},
-{
-"canton":"GE",
-"population":"457715",
-"density":"1844",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"8.2",
-"foreigners":"0",
-"foreigners_percentage":"38.7",
-"unemployment":"0",
-"unemployment_percentage":"7",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"7.7",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"9.7",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"19.1",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"21.1",
-"yearly_income_per_capita":"62839",
-"index_income_per_capita":"116",
-"national_income":"27443",
-"national_income_percentage":"6.77",
-"services_companies_number":"17273",
-"services_jobs_ft":"181803",
-"tourism_companies_number":"1609",
-"tourism_jobs_ft":"13922",
-"tourism_companies_percentage":"9.32",
-"tourism_job_percentage":"7.66"
-},
-{
-"canton":"GL",
-"population":"38608",
-"density":"56",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"0.8",
-"foreigners":"0",
-"foreigners_percentage":"19.8",
-"unemployment":"0",
-"unemployment_percentage":"2.6",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"55.5",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"35.1",
-"yearly_income_per_capita":"73236",
-"index_income_per_capita":"136",
-"national_income":"2790",
-"national_income_percentage":"0.69",
-"services_companies_number":"1163",
-"services_jobs_ft":"6770",
-"tourism_companies_number":"185",
-"tourism_jobs_ft":"664",
-"tourism_companies_percentage":"15.91",
-"tourism_job_percentage":"9.81"
-},
-{
-"canton":"GR",
-"population":"192621",
-"density":"27",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"3.4",
-"foreigners":"0",
-"foreigners_percentage":"16.1",
-"unemployment":"0",
-"unemployment_percentage":"1.7",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"19.1",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"20.3",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"23.7",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"34.7",
-"yearly_income_per_capita":"49355",
-"index_income_per_capita":"91",
-"national_income":"9441",
-"national_income_percentage":"2.33",
-"services_companies_number":"6987",
-"services_jobs_ft":"52114",
-"tourism_companies_number":"1480",
-"tourism_jobs_ft":"12435",
-"tourism_companies_percentage":"21.18",
-"tourism_job_percentage":"23.86"
-},
-{
-"canton":"JU",
-"population":"70032",
-"density":"84",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"1.1",
-"foreigners":"0",
-"foreigners_percentage":"12.3",
-"unemployment":"0",
-"unemployment_percentage":"5.4",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"13.4",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"25",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"36.9",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"13.7",
-"yearly_income_per_capita":"38070",
-"index_income_per_capita":"70",
-"national_income":"2585",
-"national_income_percentage":"0.64",
-"services_companies_number":"1870",
-"services_jobs_ft":"12518",
-"tourism_companies_number":"272",
-"tourism_jobs_ft":"1063",
-"tourism_companies_percentage":"14.55",
-"tourism_job_percentage":"8.49"
-},
-{
-"canton":"LU",
-"population":"377610",
-"density":"261",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"6.3",
-"foreigners":"0",
-"foreigners_percentage":"16.4",
-"unemployment":"0",
-"unemployment_percentage":"2.7",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"21.8",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"30.2",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"11.5",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"25.3",
-"yearly_income_per_capita":"43910",
-"index_income_per_capita":"81",
-"national_income":"15622",
-"national_income_percentage":"3.85",
-"services_companies_number":"9809",
-"services_jobs_ft":"94692",
-"tourism_companies_number":"866",
-"tourism_jobs_ft":"7590",
-"tourism_companies_percentage":"8.83",
-"tourism_job_percentage":"8.02"
-},
-{
-"canton":"NE",
-"population":"172085",
-"density":"239",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"2.4",
-"foreigners":"0",
-"foreigners_percentage":"23.1",
-"unemployment":"0",
-"unemployment_percentage":"6.4",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"12.7",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"3.3",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"25.9",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"23.2",
-"yearly_income_per_capita":"49775",
-"index_income_per_capita":"92",
-"national_income":"8425",
-"national_income_percentage":"2.08",
-"services_companies_number":"4672",
-"services_jobs_ft":"37123",
-"tourism_companies_number":"547",
-"tourism_jobs_ft":"2440",
-"tourism_companies_percentage":"11.71",
-"tourism_job_percentage":"6.57"
-},
-{
-"canton":"NW",
-"population":"41024",
-"density":"169",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"6.1",
-"foreigners":"0",
-"foreigners_percentage":"10.7",
-"unemployment":"0",
-"unemployment_percentage":"1.7",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"",
-"yearly_income_per_capita":"73286",
-"index_income_per_capita":"136",
-"national_income":"2865",
-"national_income_percentage":"0.71",
-"services_companies_number":"1520",
-"services_jobs_ft":"9316",
-"tourism_companies_number":"117",
-"tourism_jobs_ft":"1001",
-"tourism_companies_percentage":"7.70",
-"tourism_job_percentage":"10.74"
-},
-{
-"canton":"OW",
-"population":"35585",
-"density":"73",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"5.7",
-"foreigners":"0",
-"foreigners_percentage":"12.9",
-"unemployment":"0",
-"unemployment_percentage":"1.5",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"32.5",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"11.6",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"32.9",
-"yearly_income_per_capita":"39646",
-"index_income_per_capita":"73",
-"national_income":"1311",
-"national_income_percentage":"0.32",
-"services_companies_number":"1132",
-"services_jobs_ft":"7267",
-"tourism_companies_number":"156",
-"tourism_jobs_ft":"1487",
-"tourism_companies_percentage":"13.78",
-"tourism_job_percentage":"20.46"
-},
-{
-"canton":"SH",
-"population":"76356",
-"density":"254",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"4.4",
-"foreigners":"0",
-"foreigners_percentage":"22.9",
-"unemployment":"0",
-"unemployment_percentage":"3.2",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"26.7",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"34.2",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"39.1",
-"yearly_income_per_capita":"55126",
-"index_income_per_capita":"102",
-"national_income":"4086",
-"national_income_percentage":"1.01",
-"services_companies_number":"2344",
-"services_jobs_ft":"16522",
-"tourism_companies_number":"248",
-"tourism_jobs_ft":"1144",
-"tourism_companies_percentage":"10.58",
-"tourism_job_percentage":"6.92"
-},
-{
-"canton":"SZ",
-"population":"146730",
-"density":"170",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"10",
-"foreigners":"0",
-"foreigners_percentage":"18",
-"unemployment":"0",
-"unemployment_percentage":"2.3",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"16.7",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"20.1",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"13.9",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"45",
-"yearly_income_per_capita":"50170",
-"index_income_per_capita":"93",
-"national_income":"6849",
-"national_income_percentage":"1.69",
-"services_companies_number":"5300",
-"services_jobs_ft":"32395",
-"tourism_companies_number":"597",
-"tourism_jobs_ft":"3494",
-"tourism_companies_percentage":"11.26",
-"tourism_job_percentage":"10.79"
-},
-{
-"canton":"SO",
-"population":"255284",
-"density":"320",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"4.2",
-"foreigners":"0",
-"foreigners_percentage":"19.3",
-"unemployment":"0",
-"unemployment_percentage":"3.8",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"21",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"20.4",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"19.5",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"27.1",
-"yearly_income_per_capita":"46844",
-"index_income_per_capita":"87",
-"national_income":"11564",
-"national_income_percentage":"2.85",
-"services_companies_number":"6680",
-"services_jobs_ft":"50775",
-"tourism_companies_number":"751",
-"tourism_jobs_ft":"4767",
-"tourism_companies_percentage":"11.24",
-"tourism_job_percentage":"9.39"
-},
-{
-"canton":"SG",
-"population":"478907",
-"density":"243",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"4",
-"foreigners":"0",
-"foreigners_percentage":"21.7",
-"unemployment":"0",
-"unemployment_percentage":"3.4",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"13.6",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"21.4",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"14.7",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"35.8",
-"yearly_income_per_capita":"44866",
-"index_income_per_capita":"83",
-"national_income":"20680",
-"national_income_percentage":"5.10",
-"services_companies_number":"13897",
-"services_jobs_ft":"115454",
-"tourism_companies_number":"1687",
-"tourism_jobs_ft":"7736",
-"tourism_companies_percentage":"12.14",
-"tourism_job_percentage":"6.70"
-},
-{
-"canton":"TG",
-"population":"248444",
-"density":"284",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"6.4",
-"foreigners":"0",
-"foreigners_percentage":"21",
-"unemployment":"0",
-"unemployment_percentage":"3.3",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"12.1",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"15.2",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"11.7",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"42.3",
-"yearly_income_per_capita":"44918",
-"index_income_per_capita":"83",
-"national_income":"10512",
-"national_income_percentage":"2.59",
-"services_companies_number":"7016",
-"services_jobs_ft":"46904",
-"tourism_companies_number":"819",
-"tourism_jobs_ft":"3145",
-"tourism_companies_percentage":"11.67",
-"tourism_job_percentage":"6.71"
-},
-{
-"canton":"TI",
-"population":"333753",
-"density":"122",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"8.6",
-"foreigners":"0",
-"foreigners_percentage":"25.4",
-"unemployment":"0",
-"unemployment_percentage":"5.1",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"28.1",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"24.1",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"18.1",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"8.7",
-"yearly_income_per_capita":"41335",
-"index_income_per_capita":"77",
-"national_income":"13316",
-"national_income_percentage":"3.29",
-"services_companies_number":"13518",
-"services_jobs_ft":"94361",
-"tourism_companies_number":"1899",
-"tourism_jobs_ft":"11207",
-"tourism_companies_percentage":"14.05",
-"tourism_job_percentage":"11.88"
-},
-{
-"canton":"UR",
-"population":"35422",
-"density":"33",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"-1.2",
-"foreigners":"0",
-"foreigners_percentage":"9.4",
-"unemployment":"0",
-"unemployment_percentage":"1.4",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"87.3",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"",
-"yearly_income_per_capita":"45712",
-"index_income_per_capita":"85",
-"national_income":"1584",
-"national_income_percentage":"0.39",
-"services_companies_number":"827",
-"services_jobs_ft":"6383",
-"tourism_companies_number":"201",
-"tourism_jobs_ft":"1088",
-"tourism_companies_percentage":"24.30",
-"tourism_job_percentage":"17.05"
-},
-{
-"canton":"VS",
-"population":"312684",
-"density":"59",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"10.6",
-"foreigners":"0",
-"foreigners_percentage":"20.4",
-"unemployment":"0",
-"unemployment_percentage":"4.3",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"16",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"44.9",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"14.7",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"16.6",
-"yearly_income_per_capita":"38385",
-"index_income_per_capita":"71",
-"national_income":"11114",
-"national_income_percentage":"2.74",
-"services_companies_number":"9613",
-"services_jobs_ft":"67556",
-"tourism_companies_number":"2132",
-"tourism_jobs_ft":"12015",
-"tourism_companies_percentage":"22.18",
-"tourism_job_percentage":"17.79"
-},
-{
-"canton":"VD",
-"population":"713281",
-"density":"248",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"11.4",
-"foreigners":"0",
-"foreigners_percentage":"30.5",
-"unemployment":"0",
-"unemployment_percentage":"5.6",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"14.6",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"5.6",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"22",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"22.4",
-"yearly_income_per_capita":"52901",
-"index_income_per_capita":"98",
-"national_income":"35102",
-"national_income_percentage":"8.66",
-"services_companies_number":"20789",
-"services_jobs_ft":"193105",
-"tourism_companies_number":"2074",
-"tourism_jobs_ft":"16487",
-"tourism_companies_percentage":"9.98",
-"tourism_job_percentage":"8.54"
-},
-{
-"canton":"ZG",
-"population":"113105",
-"density":"535",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"9",
-"foreigners":"0",
-"foreigners_percentage":"23.3",
-"unemployment":"0",
-"unemployment_percentage":"2.6",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"21.5",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"23.3",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"9.1",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"29.1",
-"yearly_income_per_capita":"93753",
-"index_income_per_capita":"174",
-"national_income":"9971",
-"national_income_percentage":"2.46",
-"services_companies_number":"7879",
-"services_jobs_ft":"50563",
-"tourism_companies_number":"294",
-"tourism_jobs_ft":"2080",
-"tourism_companies_percentage":"3.73",
-"tourism_job_percentage":"4.11"
-},
-{
-"canton":"ZH",
-"population":"1387068",
-"density":"814",
-"population_groth_migration":"0",
-"population_groth_migration_percentage":"10.3",
-"foreigners":"0",
-"foreigners_percentage":"23.7",
-"unemployment":"0",
-"unemployment_percentage":"3.9",
-"fdp/plr_voters":"0",
-"fdp/plr_percentage":"13.2",
-"cvp/pdc_voters":"0",
-"cvp/pdc_percentage":"7.6",
-"sps/pss_voters":"0",
-"sps/pss_percentage":"19.8",
-"svp/udc_voters":"0",
-"svp/udc_percentage":"33.9",
-"yearly_income_per_capita":"68804",
-"index_income_per_capita":"127",
-"national_income":"88928",
-"national_income_percentage":"21.94",
-"services_companies_number":"48237",
-"services_jobs_ft":"559539",
-"tourism_companies_number":"3190",
-"tourism_jobs_ft":"34700",
-"tourism_companies_percentage":"6.61",
-"tourism_job_percentage":"6.20"
-}
-]};
+    "definitions": {
+        "density": {
+            "category_human": "General",
+            "category_computer": "general",
+            "dataset_human": "Density",
+            "dataset_computer": "density",
+            "dataset_unit": "People per square kilometer (km2)",
+            "dataset_origin": "http://en.wikipedia.org/wiki/Cantons_of_Switzerland#List",
+            "dataset_license": "CC-BY-SA 3.0",
+            "dataset_license_source": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "dataset_age": "2000",
+            "scraped_at": "October 21st 2011",
+            "more_information": "Density is based on year 2000 population numbers",
+            "type": "absolute"
+        },
+        "municipalities": {
+            "category_human": "General",
+            "category_computer": "general",
+            "dataset_human": "Municipalities",
+            "dataset_computer": "municipalities",
+            "dataset_unit": "Number of Municipalities per Canton",
+            "dataset_origin": "http://en.wikipedia.org/wiki/Cantons_of_Switzerland#List",
+            "dataset_license": "CC-BY-SA 3.0",
+            "dataset_license_source": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "dataset_age": "2008",
+            "scraped_at": "October 21st 2011",
+            "type": "absolute"
+        },
+        "population": {
+            "category_human": "General",
+            "category_computer": "general",
+            "dataset_human": "Population",
+            "dataset_computer": "population",
+            "dataset_unit": "People per Canton",
+            "dataset_origin": "http://en.wikipedia.org/wiki/Cantons_of_Switzerland#List",
+            "dataset_license": "CC-BY-SA 3.0",
+            "dataset_license_source": "http://creativecommons.org/licenses/by-sa/3.0/",
+            "dataset_age": "2009",
+            "scraped_at": "October 21st 2011",
+            "type": "absolute"
+        },
+        "net_bed_occupancy": {
+            "category_human": "Tourism",
+            "category_computer": "tourism",
+            "dataset_human": "Net bed occupancy",
+            "dataset_computer": "net_bed_occupancy",
+            "dataset_unit": "Nights spent * 100 / (Days Hotel is open) * (available Beds)",
+            "dataset_origin": "http://www.bfs.admin.ch/bfs/portal/de/index/themen/10/01/key.html",
+            "dataset_license": "unknown",
+            "dataset_age": "2010",
+            "scraped_at": "October 20th 2011",
+            "type": "percentage"
+        },
+        "dataset_name_in_human_format": {
+            "category_human": "Category Name in Human Format",
+            "category_computer": "category_name_in_human_format",
+            "dataset_human": "Dataset Name in Human Format",
+            "dataset_computer": "dataset_name_in_human_format",
+            "dataset_unit": "value unit eg. People per Canton",
+            "dataset_origin": "datasource eg. http://...",
+            "dataset_license": "data license",
+            "dataset_license_source": "data license source",
+            "dataset_age": "age of dataset",
+            "scraped_at": "date of scraping",
+            "more_information": "more information about datasource",
+            "type": "absolute"
+        }
+    },
+    "data": {
+        "AG": {
+            "density": {
+                "value": "430",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "220",
+                "metadata": null
+            },
+            "population": {
+                "value": "611466",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.367",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "12",
+                "metadata": null
+            }
+        },
+        "AR": {
+            "density": {
+                "value": "218",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "20",
+                "metadata": null
+            },
+            "population": {
+                "value": "53017",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.246",
+                "metadata": null
+            }
+        },
+        "AI": {
+            "density": {
+                "value": "91",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "6",
+                "metadata": null
+            },
+            "population": {
+                "value": "15688",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.264",
+                "metadata": null
+            }
+        },
+        "BS": {
+            "density": {
+                "value": "5078",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "3",
+                "metadata": null
+            },
+            "population": {
+                "value": "184950",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.471",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "23451",
+                "metadata": null
+            }
+        },
+        "BL": {
+            "density": {
+                "value": "527",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "86",
+                "metadata": null
+            },
+            "population": {
+                "value": "274404",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.291",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "35",
+                "metadata": null
+            }
+        },
+        "BE": {
+            "density": {
+                "value": "167",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "383",
+                "metadata": null
+            },
+            "population": {
+                "value": "979802",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.426",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "234.2",
+                "metadata": "foobar"
+            }
+        },
+        "FR": {
+            "density": {
+                "value": "171",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "167",
+                "metadata": null
+            },
+            "population": {
+                "value": "278493",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.284",
+                "metadata": null
+            }
+        },
+        "GE": {
+            "density": {
+                "value": "1844",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "45",
+                "metadata": null
+            },
+            "population": {
+                "value": "457715",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.521",
+                "metadata": null
+            }
+        },
+        "GL": {
+            "density": {
+                "value": "56",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "3",
+                "metadata": null
+            },
+            "population": {
+                "value": "38608",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.267",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "1235",
+                "metadata": null
+            }
+        },
+        "GR": {
+            "density": {
+                "value": "27",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "180",
+                "metadata": null
+            },
+            "population": {
+                "value": "192621",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.463",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "123",
+                "metadata": null
+            }
+        },
+        "JU": {
+            "density": {
+                "value": "84",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "64",
+                "metadata": null
+            },
+            "population": {
+                "value": "70032",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.163",
+                "metadata": null
+            }
+        },
+        "LU": {
+            "density": {
+                "value": "261",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "87",
+                "metadata": null
+            },
+            "population": {
+                "value": "377610",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.431",
+                "metadata": null
+            }
+        },
+        "NE": {
+            "density": {
+                "value": "239",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "53",
+                "metadata": null
+            },
+            "population": {
+                "value": "172085",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.279",
+                "metadata": null
+            }
+        },
+        "NW": {
+            "density": {
+                "value": "169",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "11",
+                "metadata": null
+            },
+            "population": {
+                "value": "41024",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.317",
+                "metadata": null
+            }
+        },
+        "OW": {
+            "density": {
+                "value": "73",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "7",
+                "metadata": null
+            },
+            "population": {
+                "value": "35585",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.412",
+                "metadata": null
+            }
+        },
+        "SH": {
+            "density": {
+                "value": "254",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "27",
+                "metadata": null
+            },
+            "population": {
+                "value": "76356",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.284",
+                "metadata": null
+            }
+        },
+        "SZ": {
+            "density": {
+                "value": "170",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "30",
+                "metadata": null
+            },
+            "population": {
+                "value": "146730",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.395",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "135.21",
+                "metadata": null
+            }
+        },
+        "SO": {
+            "density": {
+                "value": "320",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "122",
+                "metadata": null
+            },
+            "population": {
+                "value": "255284",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.348",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "35",
+                "metadata": null
+            }
+        },
+        "SG": {
+            "density": {
+                "value": "243",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "85",
+                "metadata": null
+            },
+            "population": {
+                "value": "478907",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.315",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "1236623",
+                "metadata": null
+            }
+        },
+        "TG": {
+            "density": {
+                "value": "284",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "80",
+                "metadata": null
+            },
+            "population": {
+                "value": "248444",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.33",
+                "metadata": null
+            }
+        },
+        "TI": {
+            "density": {
+                "value": "122",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "157",
+                "metadata": null
+            },
+            "population": {
+                "value": "333753",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.417",
+                "metadata": null
+            }
+        },
+        "UR": {
+            "density": {
+                "value": "33",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "20",
+                "metadata": null
+            },
+            "population": {
+                "value": "35422",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.274",
+                "metadata": null
+            }
+        },
+        "VS": {
+            "density": {
+                "value": "59",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "143",
+                "metadata": null
+            },
+            "population": {
+                "value": "312684",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.448",
+                "metadata": null
+            }
+        },
+        "VD": {
+            "density": {
+                "value": "248",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "339",
+                "metadata": null
+            },
+            "population": {
+                "value": "713281",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.425",
+                "metadata": null
+            }
+        },
+        "ZG": {
+            "density": {
+                "value": "535",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "11",
+                "metadata": null
+            },
+            "population": {
+                "value": "113105",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.431",
+                "metadata": null
+            }
+        },
+        "ZH": {
+            "density": {
+                "value": "814",
+                "metadata": null
+            },
+            "municipalities": {
+                "value": "171",
+                "metadata": null
+            },
+            "population": {
+                "value": "1387068",
+                "metadata": null
+            },
+            "net_bed_occupancy": {
+                "value": "0.544",
+                "metadata": null
+            },
+            "dataset_name_in_human_format": {
+                "value": "12.24",
+                "metadata": "only people over 50 were allowed"
+            }
+        }
+    }
+};
