@@ -8,23 +8,18 @@ $(document).ready(() ->
     cantons: []
     key1: null
     key2: null
-
+    
+    
   # **Warnings**
   #
   # Dataset could not be read
   warning_dataset_could_not_be_read = () ->
     alert("Dataset could not be read, please reload the page. If that error keeps coming back please contact us.")
 
+
   # Reset the pre-coloring of the svg-switzerland-map on the load event.
   $("#container svg #cantons path").attr('fill', 'rgba(166,3,17,0)')
   
-  # Hide all the datasets on load.
-  $("#datasets .categories .datatypes").hide()
-  
-  # Hook up the on-click event to expand the datasets after a click on the category title.
-  $("#datasets .categories li span").click(() ->
-    $(this).next().toggle()
-  )
   
   # **get\_original\_canton\_dataset**
   #
@@ -37,6 +32,7 @@ $(document).ready(() ->
     (is_correct_canton canton for canton in window.swissmapdata.data)
     return canton_object
     
+    
   # **get\_canton\_from\_current\_map\_cantons**
   #
   # Iterates over the current_map.cantons array and returns the object with the appropriate canton.name property
@@ -47,6 +43,7 @@ $(document).ready(() ->
         canton_object = canton
     (is_correct_canton canton for canton in window.current_map.cantons)
     return canton_object
+    
     
   # **apply\_calculations\_to\_map**
   #
@@ -62,6 +59,7 @@ $(document).ready(() ->
           $("#container svg g#cantons path[id='#{canton.name}']}").attr('fill', "rgba(49,0,98,#{((canton.value * -1) / 100)})")
       
     (color_canton canton for canton in window.current_map.cantons)
+  
   
   # **get\_highest\_value**
   #
@@ -86,6 +84,7 @@ $(document).ready(() ->
       (is_higher canton for canton in window.swissmapdata.data)
     return highest_stretched_value
 
+
   # **stretch\_and\_apply\_single\_dataset**
   #
   # Convert the actual values to stretched percentage values
@@ -106,6 +105,7 @@ $(document).ready(() ->
     window.current_map.type = 'single'
     window.current_map.key1 = key
     apply_calculations_to_map()
+   
     
   # **stretch\_and\_apply\_combined\_dataset**
   #
@@ -140,6 +140,7 @@ $(document).ready(() ->
     window.current_map.key1 = key1
     window.current_map.key2 = key2
     apply_calculations_to_map()    
+   
     
   # **set\_first\_dataset**
   #
@@ -157,6 +158,7 @@ $(document).ready(() ->
         stretch_and_apply_single_dataset(dataset_id)
     else
       warning_dataset_could_not_be_read()
+
 
   # **set\_second\_dataset**
   #
@@ -186,21 +188,39 @@ $(document).ready(() ->
         set_second_dataset(key, name)
   )
 
+
   # Reset the datasets.
-  $('#datasets ul.datatypes').html("")
+  $('#datasets ul.categories').html("")
+  
   
   # Add the available datasets to the menu.
-  add_new_dataset = (definition) ->
-    get_key_and_value = (key,value) ->
-      # if key.match(/percentage/)
-      if key != "canton"
-        $('#datasets ul.datatypes').append("<li id='#{key}'>#{value}</li>")
+  $menu = $('#datasets .categories')
+  add_dataset = (dataset_key) ->
+    definition = window.swissmapdata.definitions[dataset_key]
+    
+    $category = $menu.find("li ##{definition.category_computer}")
+    if $category.length == 0
+      $menu.append("<li><span>#{definition.category_human}</span><ul class='datatypes' id='#{definition.category_computer}'></ul></li>")
+      $category = $menu.find("li ##{definition.category_computer}")
   
-    (get_key_and_value key,value for own key,value of definition)  
-  (add_new_dataset definition for definition in window.swissmapdata.definitions)
+    $category.append("<li id='#{definition.dataset_computer}'>#{definition.dataset_human}</li>")      
+    
+  (add_dataset dataset_key for own dataset_key of window.swissmapdata.definitions)
+
+
+  # Hide all the datasets on load.
+  $("#datasets .categories .datatypes").hide()
+
+
+  # Hook up the on-click event to expand the datasets after a click on the category title.
+  $("#datasets .categories li span").click(() ->
+    $(this).next().toggle()
+  )
+
 
   # Make the dataset draggable.
   $("#datasets .categories .datatypes li").draggable(revert: true)
+
 
   # Hook up the click events to the cantons to show additional information on click.
   $("#container svg g#cantons path").click(() ->
@@ -231,6 +251,7 @@ $(document).ready(() ->
     $("<div><strong>Canton: #{canton_id}</strong><br/>#{message}</div>").dialog()
     # $("<div><strong>Canton:</strong> #{$(this).attr('id')}<br/><strong>Percentage:</strong> #{(parseFloat($(this).attr('fill').replace('rgba(166,3,17,','').replace(')','')) * 100)}%</div>").dialog()
   )
+  
   
   # **fix\_webkit\_height\_bug**
   #
