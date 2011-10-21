@@ -19,18 +19,6 @@ $(document).ready(() ->
 
   # Reset the pre-coloring of the svg-switzerland-map on the load event.
   $("#container svg #cantons path").attr('fill', 'rgba(166,3,17,0)')
-  
-  
-  # **get\_original\_canton\_dataset**
-  #
-  # Iterates over the swissmapdata.data array and returns the object with the appropriate canton property
-  get_original_canton_dataset = (canton_id) ->
-    canton_object = null
-    is_correct_canton = (canton) ->
-      if canton.canton == canton_id
-        canton_object = canton
-    (is_correct_canton canton for canton in window.swissmapdata.data)
-    return canton_object
     
     
   # **get\_canton\_from\_current\_map\_cantons**
@@ -67,8 +55,12 @@ $(document).ready(() ->
   get_highest_value = (key, canton_array) ->
     highest_stretched_value = 0
     is_higher = (canton) ->
-      parsed_number = parseFloat(canton[key])
-      # console.log("parsed number: #{parsed_number}")
+      parsed_number = null
+      if canton_array?
+        parsed_number = parseFloat(canton[key])
+      else
+        parsed_number = parseFloat(window.swissmapdata.data[canton][key].value)
+      
       if !isNaN(parsed_number) # check if it's a number
         if parsed_number >= 0 and parsed_number > highest_stretched_value
           highest_stretched_value = parsed_number
@@ -76,14 +68,17 @@ $(document).ready(() ->
           if parsed_number < 0 and (parsed_number * -1) > highest_stretched_value
             highest_stretched_value = (parsed_number * -1)
       else
-        console.log("canton #{canton.canton} has no parseable value for the key: #{key}")
+        if canton_array?
+          console.log("canton #{canton.canton} has no parseable value for the key: #{key}")
+        else
+          console.log("canton #{canton} has no parseable value for the key: #{key}")
+        
     if canton_array?
       console.log(canton_array)
       (is_higher canton for canton in canton_array)
     else    
-      (is_higher canton for canton in window.swissmapdata.data)
+      (is_higher canton for own canton of window.swissmapdata.data)
     return highest_stretched_value
-
 
   # **stretch\_and\_apply\_single\_dataset**
   #
@@ -92,14 +87,14 @@ $(document).ready(() ->
     highest_value = get_highest_value(key)
     cantons = []
     
-    add_values_to_dataset = (canton) ->
-      parsed_number = parseFloat(canton[key])
+    add_values_to_dataset = (canton_key) ->
+      parsed_number = parseFloat(window.swissmapdata.data[canton_key][key].value)
       if !isNaN(parsed_number) # value is parseable
         percentage = (100 * parsed_number) / highest_value
-        cantons.push({name: canton.canton, value: percentage})
+        cantons.push({name: canton_key, value: percentage})
       else
-        cantons.push({name: canton.canton, value: 'none'})
-    (add_values_to_dataset canton for canton in window.swissmapdata.data)
+        cantons.push({name: canton_key, value: 'none'})
+    (add_values_to_dataset canton_key for own canton_key of window.swissmapdata.data)
     
     window.current_map.cantons = cantons
     window.current_map.type = 'single'
@@ -113,14 +108,14 @@ $(document).ready(() ->
   stretch_and_apply_combined_dataset = (key1, key2) ->
     combined_dataset = []
     divide_value = (canton) ->
-      value1 = parseFloat(canton[key1])
-      value2 = parseFloat(canton[key2])
+      value1 = parseFloat(window.swissmapdata.data[canton][key1].value)
+      value2 = parseFloat(window.swissmapdata.data[canton][key2].value)
       
       if !isNaN(value1) and !isNaN(value2) # both values are parseable
-        combined_dataset.push({name: canton.canton, value: (value1/value2)})
+        combined_dataset.push({name: canton, value: (value1/value2)})
       else
-        combined_dataset.push({name: canton.canton, value: 'none'})
-    (divide_value canton for canton in window.swissmapdata.data)
+        combined_dataset.push({name: canton, value: 'none'})
+    (divide_value canton for own canton of window.swissmapdata.data)
     
     highest_value = get_highest_value('value', combined_dataset)
     
@@ -228,23 +223,23 @@ $(document).ready(() ->
     canton_id = $(this).attr('id')
     
     # get the full original canton object from window.swissmapdata.data
-    canton = get_original_canton_dataset(canton_id)
+    canton = window.swissmapdata.data[canton_id]
 
     message = ""
     if window.current_map.type == "single"
       canton_map = get_canton_from_current_map_cantons(canton_id)
-      message = "Original Value: #{canton[window.current_map.key1]}<br/>Relative Value: #{canton_map.value}%"
+      message = "Original Value: #{canton[window.current_map.key1].value} #{window.swissmapdata.definitions[window.current_map.key1].dataset_unit}<br/>Relative Value: #{canton_map.value}%"
     else
       if window.current_map.type == "double"
-        message = "Original Value Dataset 1: #{canton[window.current_map.key1]}<br/>"
-        message += "Original Value Dataset 2: #{canton[window.current_map.key2]}<br/>"
+        message = "Original Value Dataset 1: #{canton[window.current_map.key1].value} #{window.swissmapdata.definitions[window.current_map.key1].dataset_unit}<br/>"
+        message += "Original Value Dataset 2: #{canton[window.current_map.key2].value} #{window.swissmapdata.definitions[window.current_map.key2].dataset_unit}<br/>"
         
         # make divison of original values
-        mashup_value = parseFloat(canton[window.current_map.key1]) / parseFloat(canton[window.current_map.key2])
+        mashup_value = parseFloat(canton[window.current_map.key1].value) / parseFloat(canton[window.current_map.key2].value)
         if !isNaN(mashup_value)
-          message += "Mashed up value: #{canton[window.current_map.key1] / canton[window.current_map.key2]}<br/>"
+          message += "Mashed up value: #{mashup_value} #{window.swissmapdata.definitions[window.current_map.key1].dataset_unit} <b>/</b> #{window.swissmapdata.definitions[window.current_map.key2].dataset_unit}<br/>"
           canton_map = get_canton_from_current_map_cantons(canton_id)
-          message += "Relative mashed up value: #{canton_map.value}"
+          message += "Relative mashed up value: #{canton_map.value} %"
         else
           message += "Because of incomplete data we couldn't come up with a mashup value for #{canton_id}."
         
