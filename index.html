@@ -9,8 +9,22 @@
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
 <script type="text/javascript" src="data/data.js"></script>
+<script type="text/javascript" src="data/cantons.js"></script>
+<script src="js/bootstrap-twipsy.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap-popover.js" type="text/javascript" charset="utf-8"></script>
+<script src="js/bootstrap-modal.js" type="text/javascript" charset="utf-8"></script>
 <script type="text/javascript" src="js/swissmap.js"></script>
-
+<script type="text/javascript" charset="utf-8">
+  $(function(){
+    $("path[rel=popover]")
+      .popover({
+        html: true
+      })
+      .click(function(e){
+        e.preventDefault();
+      });
+  });
+</script>
 </head>
 <body>
   <div id="container">
@@ -18,16 +32,17 @@
     
     <div class="row" id="droptargets">
       <!-- <h3 class="span16">Drag Datasets on the fields below to visualize the comparison.</h3> -->
-      <div class="span6" id="target1">
+      <div class="span-one-third" id="target1">
         <span class="alert-message block-message info">Drag Dataset 1 here...</span>
       </div>
-      <h4 class="span4">compare with / divide by</h4>
-      <div class="span6" id="target2">
+      <h4 class="span-one-third">compare with / divide by</h4>
+      <div class="span-one-third" id="target2">
         <span class="alert-message block-message info">Drag Dataset 2 here...</span>
       </div>
     </div>
     <div class="row">
-    <div class="span10" id="map">
+    <div class="span-two-thirds">
+    <div id="map">
     <svg version="1.2" baseProfile="tiny"
     	 id="svg2" sodipodi:version="0.32" sodipodi:docname="Suisse cantons.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
     	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1052.363 744.094" overflow="inherit" xml:space="preserve">
@@ -1511,10 +1526,14 @@
     		l1.196,0.299l2.394,0.748l2.094,1.645l1.645,0.897l0.449,1.496l-0.748,0.598l-1.197,0.299l-1.346-0.299l-1.195,1.196v1.794
     		l1.943,2.243l1.197,2.692l0.598,0.897l1.347,1.496l0.896,1.495l0.146,1.65c0.995,0.464,2.086,1.524,3.092,1.976
     		c0.561,0.252,1.356,0.508,1.969,0.563c0.846,0.076,1.992-0.08,2.816-0.282c0.883-0.216,2.364-1.014,2.331-0.984"/>
-    </g>
-    </svg>
+      </g>
+      </svg>
+      </div>
+      <div id="information">
+        
+      </div>
     </div>
-    <div class="span6" id="sidebar">
+    <div class="span-one-third" id="sidebar">
       <h3 for="datasets">List of Categories &amp; Datasets</h3>
       <p><span class="label notice">TODO</span> Drag the datasets below on the fields above to visualize them on the map.</p>
       <div id="datasets" class="well">

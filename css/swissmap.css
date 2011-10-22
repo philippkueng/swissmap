@@ -17,6 +17,9 @@ html, body, #map_canvas {
   font-size: 2.4592em;
   display: block;
 }
+#map{
+  padding: 0px 20px 0px 0px;
+}
 #container #map svg{
   padding: 10px 0px 0px 0px;
   margin: 0;
@@ -36,6 +39,9 @@ html, body, #map_canvas {
 #target1 span, #target2 span{
   display: block;
 }
+#information{
+  
+}
 #datasets ul{
   list-style: none;
   margin: 0;
@@ -46,23 +52,6 @@ html, body, #map_canvas {
 #datasets .datatypes li{
   cursor: move;
   margin: 2px 4px 2px 0px;
-}
-div.box{
-  clear: both;
-  padding: 20px 0px 0px 0px;
-  width: 100%;
-  overflow: auto;
-}
-div.box p{
-  width: 30%;
-  float: left;
-  padding: 8px 20px 8px 0px;
-  margin: 0px;
-  line-height: 150%;
-}
-div.box p.double{
-  width: 60%;
-  padding-right: 40px;
 }
 #share p{
   display: block;
