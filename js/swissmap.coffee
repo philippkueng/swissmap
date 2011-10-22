@@ -220,7 +220,7 @@ $(document).ready(() ->
   add_popover_info_to_map = (canton_id) ->
     console.log("path##{canton_id}")
     $path = $("div#container div#map svg#svg2 g#cantons path##{canton_id}")
-    $path.attr('data-content', "<img src='css/images/#{canton_id}.png' style='width: 40px;'/>")
+    $path.attr('data-content', "<div style='width: 100%; overflow: auto;'><img src='css/images/#{canton_id}.png' style='width: 40px; float: left;'/><p style='float: left; margin-left: 20px;'><strong>Part of CH since:</strong> #{window.cantons[canton_id].since}<br/><strong>Population: </strong>#{window.swissmapdata.data[canton_id].total_population.value} ppl/canton</p></div>")
     $path.attr('data-original-title', window.cantons[canton_id].english)
     $path.attr('rel', 'popover')
   

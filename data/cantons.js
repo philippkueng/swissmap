@@ -5,7 +5,8 @@ window.cantons = {
     german: 'Zürich',
     french: 'Zurich',
     italian: 'Zurigo',
-    romansh: 'Turitg'
+    romansh: 'Turitg',
+    since: '1351'
   },
   BE: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Bern_matt.svg',
@@ -13,7 +14,8 @@ window.cantons = {
     german: 'Bern',
     french: 'Berne',
     italian: 'Berna',
-    romansh: 'Berna'
+    romansh: 'Berna',
+    since: '1353'
   },
   LU: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Luzern_matt.svg',
@@ -21,7 +23,8 @@ window.cantons = {
     german: 'Luzern',
     french: 'Lucerne',
     italian: 'Lucerna',
-    romansh: 'Lucerna'
+    romansh: 'Lucerna',
+    since: '1332'
   },
   UR: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Uri_matt.svg',
@@ -29,7 +32,8 @@ window.cantons = {
     german: 'Uri',
     french: 'Uri',
     italian: 'Uri',
-    romansh: 'Uri'
+    romansh: 'Uri',
+    since: '1291'
   },
   SZ: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_des_Kantons_Schwyz.svg',
@@ -37,7 +41,8 @@ window.cantons = {
     german: 'Schwyz',
     french: 'Schwyz (or Schwytz)',
     italian: 'Svitto',
-    romansh: 'Sviz'
+    romansh: 'Sviz',
+    since: '1291'
   },
   OW: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Obwalden_matt.svg',
@@ -45,7 +50,8 @@ window.cantons = {
     german: 'Obwalden',
     french: 'Obwald',
     italian: 'Obvaldo',
-    romansh: 'Sursilvania'
+    romansh: 'Sursilvania',
+    since: '1291'
   },
   NW: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Nidwalden_matt.svg',
@@ -53,7 +59,8 @@ window.cantons = {
     german: 'Nidwalden',
     french: 'Nidwald',
     italian: 'Nidvaldo',
-    romansh: 'Sutsilvania'
+    romansh: 'Sutsilvania',
+    since: '1291'
   },
   GL: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Glarus_matt.svg',
@@ -61,7 +68,8 @@ window.cantons = {
     german: 'Glarus',
     french: 'Glaris',
     italian: 'Glarona',
-    romansh: 'Glaruna'
+    romansh: 'Glaruna',
+    since: '1352'
   },
   ZG: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Zug_matt.svg',
@@ -69,7 +77,8 @@ window.cantons = {
     german: 'Zug',
     french: 'Zoug',
     italian: 'Zugo',
-    romansh: 'Zug'
+    romansh: 'Zug',
+    since: '1352'
   },
   FR: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Freiburg_matt.svg',
@@ -77,7 +86,8 @@ window.cantons = {
     german: 'Freiburg',
     french: 'Fribourg',
     italian: 'Friborgo',
-    romansh: 'Friburg'
+    romansh: 'Friburg',
+    since: '1481'
   },
   SO: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Solothurn_matt.svg',
@@ -85,7 +95,8 @@ window.cantons = {
     german: 'Solothurn',
     french: 'Soleure',
     italian: 'Soletta',
-    romansh: 'Soloturn'
+    romansh: 'Soloturn',
+    since: '1481'
   },
   BS: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Basel-Stadt_matt.svg',
@@ -93,7 +104,8 @@ window.cantons = {
     german: 'Basel-Stadt',
     french: 'Bâle-Ville',
     italian: 'Basilea-Città',
-    romansh: 'Basilea-Citad'
+    romansh: 'Basilea-Citad',
+    since: '1501'
   },
   BL: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Basel-Landschaft_matt.svg',
@@ -101,7 +113,8 @@ window.cantons = {
     german: 'Basel-Landschaft',
     french: 'Bâle-Campagne',
     italian: 'Basilea-Campagna',
-    romansh: 'Basilea-Champagna'
+    romansh: 'Basilea-Champagna',
+    since: '1501'
   },
   SH: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Schaffhausen_matt.svg',
@@ -109,7 +122,8 @@ window.cantons = {
     german: 'Schaffhausen',
     french: 'Schaffhouse',
     italian: 'Sciaffusa',
-    romansh: 'Schaffusa'
+    romansh: 'Schaffusa',
+    since: '1501'
   },
   AR: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Appenzell_Ausserrhoden_matt.svg',
@@ -117,7 +131,8 @@ window.cantons = {
     german: 'Appenzell Ausserrhoden',
     french: 'Appenzell Rhodes-Extérieures',
     italian: 'Appenzello Esterno',
-    romansh: 'Appenzell dador'
+    romansh: 'Appenzell dador',
+    since: '1513'
   },
   AI: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Appenzell_Innerrhoden_matt.svg',
@@ -125,7 +140,8 @@ window.cantons = {
     german: 'Appenzell Innerrhoden',
     french: 'Appenzell Rhodes-Intérieures',
     italian: 'Appenzello Interno',
-    romansh: 'Appenzell dadens'
+    romansh: 'Appenzell dadens',
+    since: '1513'
   },
   SG: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_St._Gallen_matt.svg',
@@ -133,7 +149,8 @@ window.cantons = {
     german: 'St. Gallen',
     french: 'Saint-Gall',
     italian: 'San Gallo',
-    romansh: 'Son Gagl'
+    romansh: 'Son Gagl',
+    since: '1803'
   },
   GR: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Graub%C3%BCnden_matt.svg',
@@ -141,7 +158,8 @@ window.cantons = {
     german: 'Graubünden',
     french: 'Grisons',
     italian: 'Grigioni',
-    romansh: 'Grischun'
+    romansh: 'Grischun',
+    since: '1803'
   },
   AG: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Aargau_matt.svg',
@@ -149,7 +167,8 @@ window.cantons = {
     german: 'Aargau',
     french: 'Argovie',
     italian: 'Argovia',
-    romansh: 'Argovia'
+    romansh: 'Argovia',
+    since: '1803'
   },
   TG: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Thurgau_matt.svg',
@@ -157,7 +176,8 @@ window.cantons = {
     german: 'Thurgau',
     french: 'Thurgovie',
     italian: 'Turgovia',
-    romansh: 'Turgovia'
+    romansh: 'Turgovia',
+    since: '1803'
   },
   TI: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Tessin_matt.svg',
@@ -165,7 +185,8 @@ window.cantons = {
     german: 'Tessin',
     french: 'Tessin',
     italian: 'Ticino',
-    romansh: 'Tessin'
+    romansh: 'Tessin',
+    since: '1803'
   },
   VD: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Waadt_matt.svg',
@@ -173,7 +194,8 @@ window.cantons = {
     german: 'Waadt',
     french: 'Vaud',
     italian: 'Vaud',
-    romansh: 'Vad'
+    romansh: 'Vad',
+    since: '1803'
   },
   VS: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Wallis_matt.svg',
@@ -181,7 +203,8 @@ window.cantons = {
     german: 'Wallis',
     french: 'Valais',
     italian: 'Vallese',
-    romansh: 'Vallais'
+    romansh: 'Vallais',
+    since: '1815'
   },
   NE: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Neuenburg_matt.svg',
@@ -189,7 +212,8 @@ window.cantons = {
     german: 'Neuenburg',
     french: 'Neuchâtel',
     italian: 'Neuchâtel',
-    romansh: 'Neuchâtel'
+    romansh: 'Neuchâtel',
+    since: '1815'
   },
   GE: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Genf_matt.svg',
@@ -197,7 +221,8 @@ window.cantons = {
     german: 'Genf',
     french: 'Genève',
     italian: 'Ginevra',
-    romansh: 'Genevra'
+    romansh: 'Genevra',
+    since: '1815'
   },
   JU: {
     coat_of_arms_url: 'http://en.wikipedia.org/wiki/File:Wappen_Jura_matt.svg',
@@ -205,6 +230,7 @@ window.cantons = {
     german: 'Jura',
     french: 'Jura',
     italian: 'Giura',
-    romansh: 'Giura'
+    romansh: 'Giura',
+    since: '1979'
   }
 };
