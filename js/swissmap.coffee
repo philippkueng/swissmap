@@ -146,10 +146,10 @@ $(document).ready(() ->
       if window.dataset2?
         console.log(window.dataset2)
         window.dataset1 = dataset_id
-        $('#target1').html("<span>#{dataset_name}</span>")
+        $('#target1').html("<span class='alert-message block-message success'>#{dataset_name}</span>")
         stretch_and_apply_combined_dataset(window.dataset1, window.dataset2)        
       else # only dataset1 present
-        $('#target1').html("<span>#{dataset_name}</span>")
+        $('#target1').html("<span class='alert-message block-message success'>#{dataset_name}</span>")
         stretch_and_apply_single_dataset(dataset_id)
     else
       warning_dataset_could_not_be_read()
@@ -164,7 +164,7 @@ $(document).ready(() ->
         set_first_dataset(dataset_id, dataset_name)
       else
         window.dataset2 = dataset_id
-        $('#target2').html("<span>#{dataset_name}</span>")
+        $('#target2').html("<span class='alert-message block-message success'>#{dataset_name}</span>")
         stretch_and_apply_combined_dataset(window.dataset1, window.dataset2)
     else
       warning_dataset_could_not_be_read()
@@ -195,22 +195,22 @@ $(document).ready(() ->
     
     $category = $menu.find("li ##{definition.category_computer}")
     if $category.length == 0
-      $menu.append("<li><span>#{definition.category_human}</span><ul class='datatypes' id='#{definition.category_computer}'></ul></li>")
+      $menu.append("<li><h4>#{definition.category_human}</h4><ul class='datatypes' id='#{definition.category_computer}'></ul></li>")
       $category = $menu.find("li ##{definition.category_computer}")
   
-    $category.append("<li id='#{definition.dataset_computer}'>#{definition.dataset_human}</li>")      
+    $category.append("<li class='btn' id='#{definition.dataset_computer}'>#{definition.dataset_human}</li>")      
     
   (add_dataset dataset_key for own dataset_key of window.swissmapdata.definitions)
 
 
-  # Hide all the datasets on load.
-  $("#datasets .categories .datatypes").hide()
-
-
-  # Hook up the on-click event to expand the datasets after a click on the category title.
-  $("#datasets .categories li span").click(() ->
-    $(this).next().toggle()
-  )
+  # # Hide all the datasets on load.
+  # $("#datasets .categories .datatypes").hide()
+  # 
+  # 
+  # # Hook up the on-click event to expand the datasets after a click on the category title.
+  # $("#datasets .categories li h4").click(() ->
+  #   $(this).next().toggle()
+  # )
 
 
   # Make the dataset draggable.

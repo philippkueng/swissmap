@@ -4,148 +4,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta charset="UTF-8">
 <link rel="stylesheet" href="css/jquery-ui-1.8.16.custom.css" type="text/css" charset="utf-8">
-<style type="text/css">
-  html, body, #map_canvas {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    font-family: Helvetica, Sans-Serif;
-    font-size: 14px;
-  }
-  #container{
-    padding: 40px;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  #container h1{
-    padding: 8px 30px 10px 70px;
-    background: transparent url(swissmap_logo.png) top left no-repeat;
-    margin: 0;
-    font-size: 2.4592em;
-    display: block;
-  }
-  #container #map{
-    width: 60%;
-    float: left;
-  }
-  #container #map svg{
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    height: 400px;
-    overflow: auto;
-  }
-  #sidebar{
-    width: 34%;
-    float: right;
-  }
-  #sidebar label{
-    font-size: 1em;
-    font-weight: bold;
-  }
-  #droptargets{
-    display: block;
-    width: 100%;
-    padding: 20px 0px 50px 0px;
-    overflow: auto;
-  }
-  #droptargets label{
-    display: block;
-    width: 100%;
-    float: left;
-    padding: 0px 0px 10px 0px;
-    font-weight: bold;
-  }
-  #droptargets span{
-    display: block;
-    width: 30%;
-    text-align: center;
-    margin: 0;
-    float: left;
-    font-size: 1em;
-    line-height: 2em;
-  }
-  #target1, #target2{
-    width: 34%;
-    float: left;
-    height: 30px;
-    background: #DCDDDE;
-    font-size: 1em;
-  }
-  #target1 .empty, #target2 .empty{
-    background: #DCDDDE;
-  }
-  #target1 span, #target2 span{
-    width: 100%;
-    display: block;
-  }
-  #target2{
-    float: right;
-  }
-  #datasets ul{
-    list-style: none;
-    padding: 0;
-  }
-  #datasets li{
-    display: block;
-    padding: 6px 12px 12px 12px;
-    margin-bottom: 1px;
-  }
-  #datasets .categories>li{
-    background: rgba(166,3,17,.2);
-  }
-  #datasets .categories>li>span{
-    display: block;
-    padding-bottom: 6px;
-    cursor: pointer;
-  }
-  #datasets .datatypes li{
-    background: rgba(166,3,17,.6);
-    color: white;
-    margin-bottom: 1px;
-    cursor: move;
-  }
-  div.box{
-    clear: both;
-    padding: 20px 0px 0px 0px;
-    width: 100%;
-    overflow: auto;
-  }
-  div.box p{
-    width: 30%;
-    float: left;
-    padding: 8px 20px 8px 0px;
-    margin: 0px;
-    line-height: 150%;
-  }
-  div.box p.double{
-    width: 60%;
-    padding-right: 40px;
-  }
-  #share{
-    width: 30%;
-    float: left;
-    padding: 8px 0px 8px 0px;
-  }
-  #share p{
-    display: block;
-    width: 100%;
-    margin: 0px;
-    padding: 0px 0px 8px 0px;
-  }
-  #share iframe{
-    padding: 0px 0px 4px 0px;
-  }
-  #share div{
-    padding: 0px 0px 3px 0px;
-  }
-  #share #fb-root{
-    padding: 0;
-  }
-  hr{
-    border: 2px solid #DCDDDE;
-  }
-</style>
+<link rel="stylesheet" href="css/bootstrap.min.css">
+<link rel="stylesheet" href="css/swissmap.css" type="text/css" charset="utf-8">
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
 <script type="text/javascript" src="data/data.js"></script>
@@ -154,19 +14,20 @@
 </head>
 <body>
   <div id="container">
-    <h1>SwissMap</h1>
+    <h1 class="page-header" id="header">SwissMap <small>Mashup public data</small></h1>
     
-    <div id="droptargets">
-      <label for="droptargets">Drag Datasets on the fields below to visualize the comparison.</label>
-      <div id="target1">
-        <span>Drag Dataset 1 here...</span>
+    <div class="row" id="droptargets">
+      <!-- <h3 class="span16">Drag Datasets on the fields below to visualize the comparison.</h3> -->
+      <div class="span6" id="target1">
+        <span class="alert-message block-message info">Drag Dataset 1 here...</span>
       </div>
-      <span>compare with / divide by</span>
-      <div id="target2">
-        <span>Drag Dataset 2 here...</span>
+      <h4 class="span4">compare with / divide by</h4>
+      <div class="span6" id="target2">
+        <span class="alert-message block-message info">Drag Dataset 2 here...</span>
       </div>
     </div>
-    <div id="map">
+    <div class="row">
+    <div class="span10" id="map">
     <svg version="1.2" baseProfile="tiny"
     	 id="svg2" sodipodi:version="0.32" sodipodi:docname="Suisse cantons.svg" inkscape:output_extension="org.inkscape.output.svg.inkscape" inkscape:version="0.46" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/"
     	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1052.363 744.094" overflow="inherit" xml:space="preserve">
@@ -1653,29 +1514,29 @@
     </g>
     </svg>
     </div>
-    <div id="sidebar">
-      <label for="datasets">List of Categories &amp; Datasets</label>
-      <div id="datasets">
+    <div class="span6" id="sidebar">
+      <h3 for="datasets">List of Categories &amp; Datasets</h3>
+      <p><span class="label notice">TODO</span> Drag the datasets below on the fields above to visualize them on the map.</p>
+      <div id="datasets" class="well">
         <ul class="categories">
-          <li>
-            <span>All Data</span>
-            <ul class="datatypes">
-              <li>
-                Cheese Sales
-              </li>
-              <li>
-                Bread Production
-              </li>
-            </ul>
-          </li>
+          <li>Loading categories ...</li>
         </ul>  
       </div>
     </div>
-    <div class="box" id="aboutus">
-      <hr/>
-      <p><strong>SwissMap</strong> was initiated at <a href="http://makeopendata.ch/">Make.OpenData.ch @ EPFL</a> by <a href="http://twitter.com/#!/florin_iorganda">@florin_iorganda</a>, <a href="http://twitter.com/#!/FredericJacobs">@fredericjacobs</a> and <a href="http://twitter.com/#!/philippkueng">@philippkueng</a> with the goal to enable people make sense out of public data by comparing it against each other and making it visible on a swiss map.</p><p><strong>Source Code</strong><br/>In order to be trusted and extensible the <a href="https://github.com/philippkueng/swissmap">source code</a>, the thing which makes the website running, is also public and is licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0 - CreativeCommons Attribution-ShareAlike 3.0 License</a>.</p>
-      <div id="share">
-        <p><strong>Spread the word</strong></p>
+    </div>
+    <div class="row" id="aboutus">
+      <h1 class='span16 page-header'>About <small>What? When? Who? Where?</small></h1>
+      <div class='span-one-third'>
+        <h3>It all began...</h3>
+        <p>SwissMap was initiated at <a href="http://makeopendata.ch/">Make.OpenData.ch @ EPFL</a> by <a href="http://twitter.com/#!/florin_iorganda">@florin_iorganda</a>, <a href="http://twitter.com/#!/FredericJacobs">@fredericjacobs</a> and <a href="http://twitter.com/#!/philippkueng">@philippkueng</a> with the goal to enable people make sense out of public data by comparing it against each other and making it visible on a swiss map.
+        </p>
+      </div>
+      <div class='span-one-third'>
+        <h3>Source Code</h3>
+        <p>In order to be trusted and extensible the <a href="https://github.com/philippkueng/swissmap">source code</a>, the thing which makes the website running, is also public and is licensed under the <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0 - CreativeCommons Attribution-ShareAlike 3.0 License</a>.</p>
+      </div>
+      <div class='span-one-third' id='share'>
+        <h3>Spread the word</h3>
         <a href="https://twitter.com/share" class="twitter-share-button" data-count="horizontal">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
         
         <div id="fb-root"></div>
@@ -1702,10 +1563,16 @@
         </script>
       </div>
     </div>
-    <div class="box" id="gotdata">
-      <hr />
-      <p class="double"><strong>Got Data?</strong><br/>SwissMap is all about open and public data and we're always looking for more, since you can never have enough. That means if you own, or know about a dataset (an Excel spreadsheet, CSV file, SQL database or website) which is either public domain or is standing under a CreativeCommons License and you'd like to mash it up against other datasets we really want to get to know you. Just drop us an email to <a href="mailto:swissmap@bitfondue.com">swissmap@bitfondue.com</a> so we can invite you for coffee where you can tell us all about the dataset.</p>
-      <p><strong>Feedback</strong><br/>You don't like something we've done? ...or do you have a feature suggestion? Please let us know by sending it to <a href="mailto:swissmap@bitfondue.com">swissmap@bitfondue.com</a> or poking us on twitter. If you're a programmer yourself feel free to fork <a href="http://github.com/philippkueng/swissmap">swissmap</a> and send us a pull request so we can add your feature.</p>
+    <div class="row" id="gotdata">
+      <h1 class='span16 page-header'>Help <small>Improve datasets, give feedback</small></h1>
+      <div class="span-two-thirds">
+        <h3>Got Data?</h3>
+        <p>SwissMap is all about open and public data and we're always looking for more, since you can never have enough. That means if you own, or know about a dataset (an Excel spreadsheet, CSV file, SQL database or website) which is either public domain or is standing under a CreativeCommons License and you'd like to mash it up against other datasets we really want to get to know you. Just drop us an email to <a href="mailto:swissmap@bitfondue.com">swissmap@bitfondue.com</a> so we can invite you for coffee where you can tell us all about the dataset.</p>
+      </div>
+      <div class="span-one-third">
+        <h3>Feedback</h3>
+      <p>You don't like something we've done? ...or do you have a feature suggestion? Please let us know by sending it to <a href="mailto:swissmap@bitfondue.com">swissmap@bitfondue.com</a> or poking us on twitter. If you're a programmer yourself feel free to fork <a href="http://github.com/philippkueng/swissmap">swissmap</a> and send us a pull request so we can add your feature.</p>
+      </div>
     </div>
   </div>
   <script type="text/javascript">
