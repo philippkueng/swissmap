@@ -52,21 +52,11 @@ $(document).ready(() ->
     (color_canton canton for canton in window.current_map.cantons)
   
   
+  # **add\_information\_original\_data**
   #
-  #
-  #
+  # Render message and add the original numbers onto the website
   add_information_original_data = () ->
     message = ""
-    # console.log(window.current_map.type)
-    # console.log(window.current_map.selected_canton)
-    # console.log(window.current_map.key1)
-    
-    # if !isNaN(parsed_number) # check if it's a number
-    #   if parsed_number >= 0 and parsed_number > highest_stretched_value
-    #     highest_stretched_value = parsed_number
-    #   else
-    #     if parsed_number < 0 and (parsed_number * -1) > highest_stretched_value
-    #       highest_stretched_value = (parsed_number * -1)
     
     create_single_message = () ->
       # check if first value is parseable
@@ -105,10 +95,10 @@ $(document).ready(() ->
       $("<div id='canton_name' class='span10 alert-message block-message success'>#{message}</div>").appendTo('#information')
   
   
+  # **create\_dataset\_information\_string**
   #
-  #
-  #
-  create_message_string = (key) ->
+  # Create message for dataset information
+  create_dataset_information_string = (key) ->
     # dataset name, form url, license, age, parsed, (contributed by)
     message = "<h5>#{window.swissmapdata.definitions[key].dataset_human}</h5><p>"
     
@@ -138,30 +128,30 @@ $(document).ready(() ->
   
     return message
   
+  # **add\_information\_single\_dataset**
   #
-  #
-  #
+  # Add information for the first dataset onto the website
   add_information_single_dataset = () ->
     add_information_original_data()
     
     if window.current_map.single_dataset_set
-      $('#info_dataset1').html(create_message_string(window.current_map.key1))
+      $('#info_dataset1').html(create_dataset_information_string(window.current_map.key1))
     else
       window.current_map.single_dataset_set = true
-      $("<div id='info_dataset1' class='span5'>#{create_message_string(window.current_map.key1)}</div>").appendTo('#information')
+      $("<div id='info_dataset1' class='span5'>#{create_dataset_information_string(window.current_map.key1)}</div>").appendTo('#information')
   
   
+  # **add\_information\_double\_dataset**
   #
-  #
-  #
+  # Add information for the second dataset onto the website
   add_information_double_dataset = () ->
     add_information_single_dataset()
   
     if window.current_map.double_dataset_set
-      $('#info_dataset2').html(create_message_string(window.current_map.key2))
+      $('#info_dataset2').html(create_dataset_information_string(window.current_map.key2))
     else
       window.current_map.double_dataset_set = true
-      $("<div id='info_dataset2' class='span5'>#{create_message_string(window.current_map.key2)}</div>").appendTo('#information')
+      $("<div id='info_dataset2' class='span5'>#{create_dataset_information_string(window.current_map.key2)}</div>").appendTo('#information')
         
   
   # **get\_highest\_value**
@@ -340,6 +330,7 @@ $(document).ready(() ->
   
   (add_popover_info_to_map canton for own canton of window.cantons)
 
+
   # Add the dataset metadata information to the #information field
   window.display_information = (canton_id) ->
     # check if one or two datasets are on the map
@@ -347,51 +338,6 @@ $(document).ready(() ->
     switch window.current_map.type
       when 'double' then add_information_double_dataset()
       when 'single' then add_information_single_dataset()
-      
-    # if window.current_map.type == 'double'
-      # add_information_double_dataset()
-    # if window.current_map.key2?
-    #   add_information_double_dataset()
-    # else
-    #   if window.current_map.key1?
-    #     add_information_single_dataset()
-    
-
-    # alert("it works with #{canton}")
-  
-  #   # get the canton_id
-  #   canton_id = $(this).attr('id')
-  #   console.log('foobar yay')
-  #   $('#information').html("<div class='span-two-thirds alert-message block-message success'><p>this is a test</p></div>")
-  #   
-  # 
-  #   # $(this).popover({title: 'my title', content: 'my content', trigger: 'hover'})
-  #   
-  #   console.log(canton_human_name)
-  #   # get the full original canton object from window.swissmapdata.data
-  #   # canton = window.swissmapdata.data[canton_id]
-  #   
-  #   # message = ""
-  #   # if window.current_map.type == "single"
-  #   #   canton_map = get_canton_from_current_map_cantons(canton_id)
-  #   #   message = "Original Value: #{canton[window.current_map.key1].value} #{window.swissmapdata.definitions[window.current_map.key1].dataset_unit}<br/>Relative Value: #{canton_map.value}%"
-  #   # else
-  #   #   if window.current_map.type == "double"
-  #   #     message = "Original Value Dataset 1: #{canton[window.current_map.key1].value} #{window.swissmapdata.definitions[window.current_map.key1].dataset_unit}<br/>"
-  #   #     message += "Original Value Dataset 2: #{canton[window.current_map.key2].value} #{window.swissmapdata.definitions[window.current_map.key2].dataset_unit}<br/>"
-  #   #     
-  #   #     # make divison of original values
-  #   #     mashup_value = parseFloat(canton[window.current_map.key1].value) / parseFloat(canton[window.current_map.key2].value)
-  #   #     if !isNaN(mashup_value)
-  #   #       message += "Mashed up value: #{mashup_value} #{window.swissmapdata.definitions[window.current_map.key1].dataset_unit} <b>/</b> #{window.swissmapdata.definitions[window.current_map.key2].dataset_unit}<br/>"
-  #   #       canton_map = get_canton_from_current_map_cantons(canton_id)
-  #   #       message += "Relative mashed up value: #{canton_map.value} %"
-  #   #     else
-  #   #       message += "Because of incomplete data we couldn't come up with a mashup value for #{canton_id}."
-  #       
-  #   # $("<div><strong>Canton: #{canton_id}</strong><br/>#{message}</div>").dialog()
-  #   # $("<div><strong>Canton:</strong> #{$(this).attr('id')}<br/><strong>Percentage:</strong> #{(parseFloat($(this).attr('fill').replace('rgba(166,3,17,','').replace(')','')) * 100)}%</div>").dialog()
-  # )
   
   
   # **fix\_webkit\_height\_bug**
