@@ -51,7 +51,7 @@ $(document).ready(() ->
       
     (color_canton canton for canton in window.current_map.cantons)
   
-  
+    
   # **add\_information\_original\_data**
   #
   # Render message and add the original numbers onto the website
@@ -60,27 +60,55 @@ $(document).ready(() ->
     
     create_single_message = () ->
       # check if first value is parseable
-      value1 = parseFloat(window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key1].value)
+      raw_value1 = window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key1].value
+      unit_value1 = window.swissmapdata.definitions[window.current_map.key1].dataset_unit
+      value1 = parseFloat(raw_value1)
       if !isNaN(value1)
-        message = "<strong>#{window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key1].value}</strong> #{window.swissmapdata.definitions[window.current_map.key1].dataset_unit}"
+        if window.swissmapdata.definitions[window.current_map.key1].type == "percentage"
+          message = "<strong>#{(value1 * 100).toPrecision(4)}%</strong> #{unit_value1}"
+        else
+          message = "<strong>#{raw_value1}</strong> #{unit_value1}"
       else
         message = "There's no data available for canton <strong>#{window.cantons[window.current_map.selected_canton].english}</strong>"
         
     create_double_message = () ->
+
       # check if first value is parseable
-      value1 = parseFloat(window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key1].value)
+      raw_value1 = window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key1].value
+      unit_value1 = window.swissmapdata.definitions[window.current_map.key1].dataset_unit
+      value1 = parseFloat(raw_value1)
       
       # check if second value is parseable
-      value2 = parseFloat(window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key2].value)
+      raw_value2 = window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key2].value
+      unit_value2 = window.swissmapdata.definitions[window.current_map.key2].dataset_unit
+      value2 = parseFloat(raw_value2)
       
       if !isNaN(value1) and !isNaN(value2) # both values are valid
-        message = "<strong>#{window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key1].value}</strong> #{window.swissmapdata.definitions[window.current_map.key1].dataset_unit}<br/><strong>divided by</strong><br/><strong>#{window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key2].value}</strong> #{window.swissmapdata.definitions[window.current_map.key2].dataset_unit}<br/><strong>equals</strong><h4>#{(value1 / value2).toString(10)}</h4>"
+        type1 = window.swissmapdata.definitions[window.current_map.key1].type
+        type2 = window.swissmapdata.definitions[window.current_map.key2].type
+        
+        if type1 == "percentage" and type2 == "percentage"
+          message = "<strong>#{(value1 * 100).toPrecision(4)}%</strong> #{unit_value1}<br/><strong>divided by</strong><br/><strong>#{(value2 * 100).toPrecision(4)}%</strong> #{unit_value2}<br/><strong>equals</strong><h4>#{(value1 * 100) / (value2 * 100)}</h4>"
+        else
+          if type1 == "percentage" # type2 is absolute
+            message = "<strong>#{(value1 * 100).toPrecision(4)}%</strong> #{unit_value1}<br/><strong>divided by</strong><br/><strong>#{raw_value2}</strong> #{unit_value2}<br/><strong>equals</strong><h4>#{(value1 * 100) / value2}</h4>"
+          else
+            if type2 == "percentage" # type1 is absolute
+              message = "<strong>#{raw_value1}</strong> #{unit_value1}<br/><strong>divided by</strong><br/><strong>#{(value2 * 100).toPrecision(4)}%</strong> #{unit_value2}<br/><strong>equals</strong><h4>#{value1 / (value2 * 100)}</h4>"
+            else # both values are absolute
+              message = "<strong>#{raw_value1}</strong> #{unit_value1}<br/><strong>divided by</strong><br/><strong>#{raw_value1}</strong> #{unit_value2}<br/><strong>equals</strong><h4>#{value1 / value2}</h4>"
       else
         if !isNaN(value1) # value1 is valid
-          message = "<strong>#{window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key1].value}</strong> #{window.swissmapdata.definitions[window.current_map.key1].dataset_unit}<br/>There's no data available for canton <strong>#{window.cantons[window.current_map.selected_canton].english}</strong> and dataset <strong>#{window.swissmapdata.definitions[window.current_map.key2].dataset_human}</strong>"
+          if window.swissmapdata.definitions[window.current_map.key1].type == "percentage"
+            message = "<strong>#{(value1 * 100).toPrecision(4)}%</strong> #{unit_value1}<br/>There's no data available for canton <strong>#{window.cantons[window.current_map.selected_canton].english}</strong> and dataset <strong>#{window.swissmapdata.definitions[window.current_map.key2].dataset_human}</strong>"
+          else
+            message = "<strong>#{raw_value1}</strong> #{unit_value1}<br/>There's no data available for canton <strong>#{window.cantons[window.current_map.selected_canton].english}</strong> and dataset <strong>#{window.swissmapdata.definitions[window.current_map.key2].dataset_human}</strong>"
         else
           if !isNaN(value2) # value2 is valid => value1 has to be invalid
-            message = "<strong>#{window.swissmapdata.data[window.current_map.selected_canton][window.current_map.key2].value}</strong> #{window.swissmapdata.definitions[window.current_map.key2].dataset_unit}<br/>There's no data available for canton <strong>#{window.cantons[window.current_map.selected_canton].english}</strong> and dataset <strong>#{window.swissmapdata.definitions[window.current_map.key1].dataset_human}</strong>"
+            if window.swissmapdata.definitions[window.current_map.key2].type == "percentage"
+              message = "<strong>#{(value2 * 100).toPrecision(4)}</strong> #{unit_value2}<br/>There's no data available for canton <strong>#{window.cantons[window.current_map.selected_canton].english}</strong> and dataset <strong>#{window.swissmapdata.definitions[window.current_map.key1].dataset_human}</strong>"
+            else
+              message = "<strong>#{raw_value2}</strong> #{unit_value2}<br/>There's no data available for canton <strong>#{window.cantons[window.current_map.selected_canton].english}</strong> and dataset <strong>#{window.swissmapdata.definitions[window.current_map.key1].dataset_human}</strong>"
           else
             message = "There's no data at all available for canton <strong>#{window.cantons[window.current_map.selected_canton].english}</strong> with the selected datasets"
     
