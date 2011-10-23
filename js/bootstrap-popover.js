@@ -37,6 +37,9 @@
       $tip.find('.title')[this.options.html ? 'html' : 'text'](this.getTitle())
       $tip.find('.content p')[this.options.html ? 'html' : 'text'](this.getContent())
       $tip[0].className = 'popover'
+      
+      // necessary to display the dataset metadata information
+      window.display_information(this.$element.attr('id'));
     }
 
   , getContent: function () {

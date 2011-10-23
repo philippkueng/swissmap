@@ -40,7 +40,12 @@ html, body, #map_canvas {
   display: block;
 }
 #information{
-  
+  padding-bottom: 40px;
+  width: 100%;
+  overflow: auto;
+}
+#canton_name{
+  text-align: center;
 }
 #datasets ul{
   list-style: none;
